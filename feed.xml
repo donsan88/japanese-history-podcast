@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Japanese History</title>
+    <link>https://egui-jp.com/</link>
+    <atom:link href="https://donsan88.github.io/japanese-history-podcast/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en</language>
+    <description>Japanese history for English speakers, one era at a time. Short, story-driven episodes that give you the big picture first, with no dates to memorize.</description>
+    <itunes:author>Egui Japan</itunes:author>
+    <itunes:owner><itunes:name>Egui Japan</itunes:name><itunes:email></itunes:email></itunes:owner>
+    <itunes:image href="https://donsan88.github.io/japanese-history-podcast/cover.jpg"/>
+    <itunes:category text="History"/>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Japanese History for Beginners: The Whole Story in 18 Minutes</title>
+      <description>How did Japan go from Ice Age hunters to one of the world's largest economies? The answer fits in one line: the imperial court, the shogunate, the modern nation, war, and recovery. This first episode walks you through every era of Japanese history, with no dates to memorize, just the big picture.
+
+Read more on the blog: https://egui-jp.com/japanese-history/
+Deeper stories on Substack: https://eguijapan.substack.com</description>
+      <enclosure url="https://donsan88.github.io/japanese-history-podcast/audio/ep01.mp3" length="17103212" type="audio/mpeg"/>
+      <guid isPermaLink="false">japanese-history-ep01</guid>
+      <pubDate>Tue, 13 Oct 2026 03:15:00 +0900</pubDate>
+      <itunes:duration>00:17:49</itunes:duration>
+      <itunes:episode>1</itunes:episode>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+  </channel>
+</rss>
