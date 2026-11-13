@@ -12,7 +12,21 @@
     <itunes:category text="History"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <item>
+<item>
+        <title>The Muromachi Period Explained: Two Ashikaga Houses and the Brakes That Failed</title>
+        <description>At a victory banquet, warriors burst in and cut down the guest of honor: the shogun himself. And this shogun, Ashikaga Yoshinori, had been chosen by drawing lots.
+          The Muromachi shogunate was a system with two Ashikaga houses standing side by side: the shogun in Kyoto, and the Kamakura kubo in Kamakura. What kept them from colliding was the people in the middle who acted as brakes. Every time a brake was lost, war broke out, and in the end, Kyoto itself was burned to the ground in the Onin War.
+
+          Read more on the blog: https://egui-jp.com/muromachi-period/
+          Deeper stories on Substack: https://eguijapan.substack.com</description>
+        <enclosure url="https://donsan88.github.io.japanese-history-podcast/audio/ep10.mp3" length="8022352" type="audio/mpeg"/>
+        <guid isPermaLink="false">japanese-history-ep10</guid>
+        <pubDate>Fri, 13 Nov 2026 19:52:00 +0900</pubDate>
+        <itunes:duration>00:08:21</itunes:duration>
+        <itunes:episode>10</itunes:episode>
+        <itunes:explicit>false</itunes:explicit>
+</item>
+  <item>
       <title>The Nanbokucho Period Explained: Why the Weaker Southern Court Lasted Sixty Years</title>
       <description>For about sixty years, Japan had two emperors at once. The Southern Court of Emperor Go-Daigo, holed up in the mountains of Yoshino, lost almost all of the commanders it relied on within a few years. So why did it last until 1392?
 The answer: it was not Southern strength. The Northern side split apart in family quarrels again and again, and every time, the side that was about to lose borrowed the Southern Court's banner. This episode follows the sixty years of the two courts along that answer.
