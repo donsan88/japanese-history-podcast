@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Egui Japan</title>
+    <title>ENN | Egui News Network</title>
     <link>https://egui-jp.com/</link>
     <atom:link href="https://donsan88.github.io/japanese-history-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
     <description>Japanese history for English speakers, one era at a time. Short, story-driven episodes that give you the big picture first, with no dates to memorize.</description>
-    <itunes:author>Egui Japan</itunes:author>
+    <itunes:author>ENN | Egui News Network</itunes:author>
     <itunes:owner><itunes:name>Egui Japan</itunes:name><itunes:email>donsan88@gmail.com</itunes:email></itunes:owner>
     <itunes:image href="https://donsan88.github.io/japanese-history-podcast/cover.jpg"/>
     <itunes:category text="History"/>
