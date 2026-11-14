@@ -12,6 +12,20 @@
     <itunes:category text="History"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
+    <item>
+        <title>The Sengoku Period Explained: How Succession Fights Created Japan's Warlords</title>
+              <description>A young man killed his half-brother and his half-brother's mother, and seized by force the seat that ruled eastern Japan. The man sent to strike him down was Hojo Soun.
+                The Warring States period was an age born from fights over who would inherit each house. In the shogun's family and in the warlords' families alike, every succession fight produced a new master. And when three houses that had won their succession fights joined hands, a man standing outside their circle, Oda Nobunaga, ended up bringing the age to a close.
+
+                Read more on the blog: https://egui-jp.com/sengoku-period/
+                Deeper stories on Substack: https://eguijapan.substack.com</description>
+              <enclosure url="https://donsan88.github.io/japanese-history-podcast/audio/ep11.mp3" length="8603315" type="audio/mpeg"/>
+              <guid isPermaLink="false">japanese-history-ep11</guid>
+              <pubDate>Sat, 14 Nov 2026 15:56:00 +0900</pubDate>
+              <itunes:duration>00:08:58</itunes:duration>
+              <itunes:episode>11</itunes:episode>
+              <itunes:explicit>false</itunes:explicit>
+    </item>
 <item>
         <title>The Muromachi Period Explained: Two Ashikaga Houses and the Brakes That Failed</title>
         <description>At a victory banquet, warriors burst in and cut down the guest of honor: the shogun himself. And this shogun, Ashikaga Yoshinori, had been chosen by drawing lots.
