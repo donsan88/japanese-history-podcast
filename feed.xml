@@ -12,7 +12,21 @@
     <itunes:category text="History"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <item>
+        <item>
+          <title>The Azuchi-Momoyama Period Explained: How the Retainers' Fights Decided Who Ruled Japan</title>
+                <description>With the unification of Japan almost within reach, Oda Nobunaga was attacked by one of his own retainers and lost his life.
+                In this period, power over the realm changed hands twice. And both times, the deciding factor was the same. After the master fell, whoever won the fight among his retainers took the realm.
+    
+                    Read more on the blog: https://egui-jp.com/azuchi-momoyama-period/
+                    Deeper stories on Substack: https://eguijapan.substack.com</description>
+                        <enclosure url="https://donsan88.github.io/japanese-history-podcast/audio/ep12.mp3" length="5128821" type="audio/mpeg"/>
+                  <guid isPermaLink="false">japanese-history-ep12</guid>
+                    <pubDate>Sat, 14 Nov 2026 18:05:00 +0900</pubDate>
+                    <itunes:duration>00:05:20</itunes:duration>
+                    <itunes:episode>12</itunes:episode>
+                    <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
         <title>The Sengoku Period Explained: How Succession Fights Created Japan's Warlords</title>
               <description>A young man killed his half-brother and his half-brother's mother, and seized by force the seat that ruled eastern Japan. The man sent to strike him down was Hojo Soun.
                 The Warring States period was an age born from fights over who would inherit each house. In the shogun's family and in the warlords' families alike, every succession fight produced a new master. And when three houses that had won their succession fights joined hands, a man standing outside their circle, Oda Nobunaga, ended up bringing the age to a close.
