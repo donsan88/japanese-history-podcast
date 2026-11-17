@@ -186,6 +186,27 @@
     display:flex;align-items:center;justify-content:center;
     background:var(--red-tint);color:var(--red);font-size:15px;font-weight:700;
   }
+  .app-btn{
+    display:none;margin-top:8px;
+    align-items:center;gap:5px;
+    min-height:30px;padding:5px 12px;
+    border:1px solid var(--red);border-radius:999px;
+    background:var(--red);color:#fff;
+    font-size:12.5px;font-weight:800;line-height:1.2;cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .app-btn::before{content:"▣";font-size:11px;line-height:1}
+  body.is-mobile .app-btn{display:inline-flex}
+  .app-btn:active{opacity:.85}
+  .app-btn:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+  .passkey-badge{
+    display:inline-flex;align-items:center;gap:5px;margin-top:8px;
+    min-height:26px;padding:4px 10px;border-radius:999px;
+    border:1px solid var(--line-strong);background:var(--bg-soft);
+    color:var(--text);font-size:11.5px;font-weight:800;line-height:1.25;
+  }
+  .passkey-badge::before{content:"";width:7px;height:7px;border-radius:999px;background:var(--red);flex:0 0 7px}
+  .passkey-hint{display:block;margin-top:5px;font-size:12px;line-height:1.55;color:var(--text-2)}
 
   .empty{
     display:none;text-align:center;padding:36px 16px 10px;color:var(--text-2);
@@ -413,46 +434,46 @@
   <!-- 管理画面 -->
   <section id="admin" data-section>
     <div class="sec-head"><h2>管理画面</h2><span class="count">8件</span></div>
-    <p class="sec-desc">投稿・予約・分析などの裏側。ログイン済みのブラウザで開くとそのまま入れます。</p>
+    <p class="sec-desc">投稿・予約・分析などの裏側。スマホでは各カードの「アプリで開く」がおすすめです（アプリはログインが長持ちします）。カード本体は今まで通りWeb版を開きます。</p>
     <div class="grid">
-      <a class="link-card" href="https://studio.youtube.com/channel/UCCgw5pvXWoZINfzMx9uJzxQ" target="_blank" rel="noopener" data-search="youtube studio ユーチューブ スタジオ 管理 動画 アナリティクス">
+      <a class="link-card" href="https://studio.youtube.com/channel/UCCgw5pvXWoZINfzMx9uJzxQ" target="_blank" rel="noopener" data-search="youtube studio ユーチューブ スタジオ 管理 動画 アナリティクス アプリ app">
         <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h10M18 8h2M4 16h2M10 16h10"/><circle cx="16" cy="8" r="2.2"/><circle cx="8" cy="16" r="2.2"/></svg></span>
-        <span class="card-body"><span class="card-name">YouTube Studio</span><span class="card-desc" style="display:block">動画管理・アナリティクス</span><span class="card-host" style="display:block">studio.youtube.com</span></span>
+        <span class="card-body"><span class="card-name">YouTube Studio</span><span class="card-desc" style="display:block">動画管理・アナリティクス</span><span class="card-host" style="display:block">studio.youtube.com</span><span class="app-btn" role="button" tabindex="0" data-app-btn data-package="com.google.android.apps.youtube.creator" data-web-url="https://studio.youtube.com/channel/UCCgw5pvXWoZINfzMx9uJzxQ" aria-label="YouTube Studioをアプリで開く">アプリで開く</span></span>
         <span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="link-card" href="https://egui-jp.com/wp-admin/" target="_blank" rel="noopener" data-search="wordpress ワードプレス 管理画面 ブログ wp-admin 記事">
+      <a class="link-card" href="https://egui-jp.com/wp-admin/" target="_blank" rel="noopener" data-search="wordpress ワードプレス 管理画面 ブログ wp-admin 記事 アプリ app">
         <span class="tile"><span class="mono">W</span></span>
-        <span class="card-body"><span class="card-name">WordPress管理画面</span><span class="card-desc" style="display:block">ブログの記事投稿・編集</span><span class="card-host" style="display:block">egui-jp.com/wp-admin</span></span>
+        <span class="card-body"><span class="card-name">WordPress管理画面</span><span class="card-desc" style="display:block">ブログの記事投稿・編集</span><span class="card-host" style="display:block">egui-jp.com/wp-admin</span><span class="app-btn" role="button" tabindex="0" data-app-btn data-package="org.wordpress.android" data-web-url="https://egui-jp.com/wp-admin/" aria-label="WordPressをアプリで開く">アプリで開く</span></span>
         <span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="link-card" href="https://eguijapan.substack.com/publish" target="_blank" rel="noopener" data-search="substack サブスタック ダッシュボード 管理 投稿 publish">
+      <a class="link-card" href="https://eguijapan.substack.com/publish" target="_blank" rel="noopener" data-search="substack サブスタック ダッシュボード 管理 投稿 publish アプリ app">
         <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
-        <span class="card-body"><span class="card-name">Substackダッシュボード</span><span class="card-desc" style="display:block">記事の投稿・購読者管理</span><span class="card-host" style="display:block">eguijapan.substack.com/publish</span></span>
+        <span class="card-body"><span class="card-name">Substackダッシュボード</span><span class="card-desc" style="display:block">記事の投稿・購読者管理</span><span class="card-host" style="display:block">eguijapan.substack.com/publish</span><span class="app-btn" role="button" tabindex="0" data-app-btn data-package="com.substack.app" data-web-url="https://eguijapan.substack.com/publish" aria-label="Substackをアプリで開く">アプリで開く</span></span>
         <span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="link-card" href="https://business.facebook.com/" target="_blank" rel="noopener" data-search="meta business suite メタ ビジネス 予約 管理 facebook instagram fb ig">
+      <a class="link-card" href="https://business.facebook.com/" target="_blank" rel="noopener" data-search="meta business suite メタ ビジネス 予約 管理 facebook instagram fb ig アプリ app">
         <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></span>
-        <span class="card-body"><span class="card-name">Meta Business Suite</span><span class="card-desc" style="display:block">FB / IG の予約投稿・管理</span><span class="card-host" style="display:block">business.facebook.com</span></span>
+        <span class="card-body"><span class="card-name">Meta Business Suite</span><span class="card-desc" style="display:block">FB / IG の予約投稿・管理</span><span class="card-host" style="display:block">business.facebook.com</span><span class="app-btn" role="button" tabindex="0" data-app-btn data-package="com.facebook.pages.app" data-web-url="https://business.facebook.com/" aria-label="Meta Business Suiteをアプリで開く">アプリで開く</span></span>
         <span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="link-card" href="https://www.tiktok.com/tiktokstudio" target="_blank" rel="noopener" data-search="tiktok studio ティックトック スタジオ 管理 投稿">
+      <a class="link-card" href="https://www.tiktok.com/tiktokstudio" target="_blank" rel="noopener" data-search="tiktok studio ティックトック スタジオ 管理 投稿 アプリ app">
         <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18.5V6l10-2v11.5"/><circle cx="6.5" cy="18.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg></span>
-        <span class="card-body"><span class="card-name">TikTok Studio</span><span class="card-desc" style="display:block">動画の投稿・分析</span><span class="card-host" style="display:block">tiktok.com/tiktokstudio</span></span>
+        <span class="card-body"><span class="card-name">TikTok Studio</span><span class="card-desc" style="display:block">動画の投稿・分析</span><span class="card-host" style="display:block">tiktok.com/tiktokstudio</span><span class="app-btn" role="button" tabindex="0" data-app-btn data-package="com.zhiliaoapp.musically" data-web-url="https://www.tiktok.com/tiktokstudio" aria-label="TikTokをアプリで開く">アプリで開く</span></span>
         <span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="link-card" href="https://podcasters.spotify.com/" target="_blank" rel="noopener" data-search="spotify for creators スポティファイ ポッドキャスト 管理 配信">
+      <a class="link-card" href="https://podcasters.spotify.com/" target="_blank" rel="noopener" data-search="spotify for creators スポティファイ ポッドキャスト 管理 配信 アプリ app">
         <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3Z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
-        <span class="card-body"><span class="card-name">Spotify for Creators</span><span class="card-desc" style="display:block">ポッドキャストの配信管理</span><span class="card-host" style="display:block">podcasters.spotify.com</span></span>
+        <span class="card-body"><span class="card-name">Spotify for Creators</span><span class="card-desc" style="display:block">ポッドキャストの配信管理</span><span class="card-host" style="display:block">podcasters.spotify.com</span><span class="app-btn" role="button" tabindex="0" data-app-btn data-package="com.spotify.podcasters" data-web-url="https://podcasters.spotify.com/" aria-label="Spotify for Creatorsをアプリで開く">アプリで開く</span></span>
         <span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="link-card" href="https://podcastsconnect.apple.com/" target="_blank" rel="noopener" data-search="apple podcasts connect アップル ポッドキャスト 管理">
+      <a class="link-card" href="https://podcastsconnect.apple.com/" target="_blank" rel="noopener" data-search="apple podcasts connect アップル ポッドキャスト 管理 パスキー 生体認証 face id">
         <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="9" r="3"/><path d="M8.5 21a3.5 6 0 0 1 7 0M5.5 5.5a9 9 0 0 0 0 7M18.5 5.5a9 9 0 0 1 0 7"/></svg></span>
-        <span class="card-body"><span class="card-name">Apple Podcasts Connect</span><span class="card-desc" style="display:block">Apple向けポッドキャスト管理</span><span class="card-host" style="display:block">podcastsconnect.apple.com</span></span>
+        <span class="card-body"><span class="card-name">Apple Podcasts Connect</span><span class="card-desc" style="display:block">Apple向けポッドキャスト管理</span><span class="card-host" style="display:block">podcastsconnect.apple.com</span><span class="passkey-badge">パスキー／生体認証で入り直し</span><span class="passkey-hint">Safariで開くとFace IDで入り直せます</span></span>
         <span class="arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="link-card" href="https://kdp.amazon.co.jp/" target="_blank" rel="noopener" data-search="kdp 本棚 kindle キンドル 出版 amazon アマゾン 本">
+      <a class="link-card" href="https://kdp.amazon.co.jp/" target="_blank" rel="noopener" data-search="kdp 本棚 kindle キンドル 出版 amazon アマゾン 本 パスキー 生体認証">
         <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg></span>
-        <span class="card-body"><span class="card-name">KDP本棚</span><span class="card-desc" style="display:block">Kindle本の出版・売上管理</span><span class="card-host" style="display:block">kdp.amazon.co.jp</span></span>
+        <span class="card-body"><span class="card-name">KDP本棚</span><span class="card-desc" style="display:block">Kindle本の出版・売上管理</span><span class="card-host" style="display:block">kdp.amazon.co.jp</span><span class="passkey-badge">パスキー／生体認証で入り直し</span><span class="passkey-hint">Amazonのパスキー設定後は指紋・顔認証で入れます</span></span>
         <span class="arrow" aria-hidden="true">↗</span>
       </a>
     </div>
@@ -504,8 +525,8 @@
 
 <footer>
   <div class="note">
-    <p>管理画面はブラウザのログイン状態を引き継ぎます。一度ログインしていればそのまま開けます。</p>
-    <p>別のブラウザや新しい端末で開いた場合、最初の1回だけ各サービス側でログインが求められます。いつも使っているブラウザで開くのがおすすめです。</p>
+    <p>スマホでは「アプリで開く」がおすすめです。公式アプリはログインが長持ちするので、毎回の入り直しがぐっと減ります。カード本体を押せば、今まで通りWeb版も開けます。</p>
+    <p>KDPとApple Podcasts Connectは仕様上ときどき入り直しが必要ですが、パスキー／生体認証を設定すれば1タップで戻れます（AppleはSafari＋Face ID、KDPはAmazonのパスキー設定後）。PCでは「アプリで開く」ボタンは表示されません。</p>
   </div>
   <p class="foot-line">ENN メディアハブ ― Egui News Network 全20リンク</p>
 </footer>
@@ -820,6 +841,50 @@
     b.addEventListener('click', function(){ render(b.getAttribute('data-ds')); });
   });
   render('blogImp');
+})();
+
+/* ---------- App open buttons (admin cards only) ---------- */
+(function(){
+  var ua = navigator.userAgent || '';
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua);
+  var isMobile = isAndroid || isIOS || /Mobi/i.test(ua);
+  if(!isMobile) return;
+  document.body.classList.add('is-mobile');
+  function intentUrl(webUrl, pkg){
+    try{
+      var u = new URL(webUrl);
+      var hostPath = u.host + u.pathname + (u.search || '');
+      return 'intent://' + hostPath + '#Intent;scheme=https;package=' + pkg + ';S.browser_fallback_url=' + encodeURIComponent(webUrl) + ';end';
+    }catch(e){
+      return webUrl;
+    }
+  }
+  function openApp(btn){
+    var webUrl = btn.getAttribute('data-web-url');
+    var pkg = btn.getAttribute('data-package');
+    if(!webUrl) return;
+    if(isAndroid && pkg){
+      window.location.href = intentUrl(webUrl, pkg);
+    }else{
+      window.open(webUrl, '_blank', 'noopener');
+    }
+  }
+  var btns = Array.prototype.slice.call(document.querySelectorAll('[data-app-btn]'));
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      openApp(btn);
+    });
+    btn.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        e.stopPropagation();
+        openApp(btn);
+      }
+    });
+  });
 })();
 </script>
 </body>
