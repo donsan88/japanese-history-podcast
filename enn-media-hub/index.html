@@ -218,6 +218,96 @@
     .hero-stats{margin-top:12px}
     section{scroll-margin-top:170px}
   }
+  /* ---------- Tabs ---------- */
+  .tabbar{background:var(--bg);border-bottom:1px solid var(--line)}
+  .tabbar-inner{max-width:1020px;margin:0 auto;padding:10px 16px 0;display:flex;gap:8px}
+  .tab-btn{
+    flex:1;max-width:260px;min-height:48px;padding:10px 16px;
+    border:1px solid var(--line-strong);border-bottom:none;border-radius:12px 12px 0 0;
+    background:var(--bg-soft);color:var(--text-2);
+    font-family:inherit;font-size:15.5px;font-weight:800;cursor:pointer;
+  }
+  .tab-btn[aria-selected="true"]{background:var(--red);border-color:var(--red);color:#fff}
+  .tab-btn .tab-sub{display:block;font-size:11.5px;font-weight:600;opacity:.85;margin-top:1px}
+  [hidden]{display:none !important}
+
+  /* ---------- Measurement ---------- */
+  .measure-main{max-width:1020px;margin:0 auto;padding:8px 16px 12px}
+  .streak-row{display:grid;grid-template-columns:1fr;gap:10px;margin-top:6px}
+  @media (min-width:640px){.streak-row{grid-template-columns:1fr 1fr 1fr}}
+  .stat-box{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:14px 16px;
+  }
+  .stat-box .k{font-size:12.5px;font-weight:700;color:var(--text-3)}
+  .stat-box .v{font-size:21px;font-weight:800;margin-top:2px;line-height:1.3}
+  .stat-box .v .unit{font-size:13px;font-weight:700;color:var(--text-2)}
+  .stat-box .d{font-size:12.5px;color:var(--text-2);margin-top:2px}
+  .pepper-card{
+    background:var(--red-tint);border:1px solid var(--red-tint-2);border-radius:var(--radius);
+    padding:16px 18px;box-shadow:var(--shadow);
+  }
+  .pepper-card .who{font-size:13px;font-weight:800;color:var(--red)}
+  .pepper-card .date{font-size:12.5px;color:var(--text-2);font-weight:700}
+  .pepper-card p{margin:8px 0 0;font-size:15.5px;line-height:1.8}
+  .comment-list{display:flex;flex-direction:column;gap:10px}
+  .comment-item{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;box-shadow:var(--shadow);
+  }
+  .comment-item .date{font-size:12.5px;font-weight:700;color:var(--red)}
+  .comment-item p{margin:4px 0 0;font-size:14.5px;line-height:1.75}
+  .metric-grid{display:grid;grid-template-columns:1fr;gap:10px}
+  @media (min-width:640px){.metric-grid{grid-template-columns:1fr 1fr}}
+  @media (min-width:960px){.metric-grid{grid-template-columns:1fr 1fr 1fr}}
+  .metric-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:16px;
+  }
+  .metric-card .m-name{font-size:15.5px;font-weight:800;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .metric-card .m-label{font-size:12.5px;color:var(--text-3);font-weight:700;margin-top:8px}
+  .metric-card .m-value{font-size:27px;font-weight:800;line-height:1.25}
+  .metric-card .m-value .unit{font-size:13.5px;font-weight:700;color:var(--text-2)}
+  .metric-card .m-sub{font-size:13px;color:var(--text-2);line-height:1.6;margin-top:4px}
+  .delta{display:inline-flex;align-items:center;padding:1px 9px;border-radius:999px;font-size:12.5px;font-weight:800;background:var(--red-tint);color:var(--red);border:1px solid var(--red-tint-2)}
+  .delta.flat{background:var(--bg-soft);color:var(--text-2);border-color:var(--line)}
+  .m-date{font-size:12px;color:var(--text-3);margin-top:8px}
+  .badge-wait{font-size:11.5px;font-weight:800;color:var(--text-2);background:var(--bg-soft);border:1px solid var(--line-strong);padding:2px 8px;border-radius:999px}
+  .badge-live{font-size:11.5px;font-weight:800;color:#fff;background:var(--red);padding:2px 8px;border-radius:999px}
+  .chart-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:16px;
+  }
+  .seg-row{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+  .seg-btn{
+    min-height:40px;padding:7px 14px;border-radius:999px;cursor:pointer;
+    border:1px solid var(--line-strong);background:var(--card);
+    font-family:inherit;font-size:13.5px;font-weight:700;color:var(--text);
+  }
+  .seg-btn[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+  #chartBox{width:100%}
+  #chartBox svg{width:100%;height:auto;display:block}
+  .chart-empty{
+    text-align:center;padding:30px 14px;color:var(--text-2);font-size:14.5px;line-height:1.8;
+    border:1.5px dashed var(--line-strong);border-radius:12px;background:var(--bg-soft);
+  }
+  .chart-note{font-size:12.5px;color:var(--text-2);margin:10px 0 0;line-height:1.7}
+  .data-table{width:100%;border-collapse:collapse;margin-top:14px;font-size:14px}
+  .data-table th,.data-table td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left}
+  .data-table th{font-size:12.5px;color:var(--text-3)}
+  .data-table td.num,.data-table th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .exp-list{display:flex;flex-direction:column;gap:10px}
+  .exp-item{
+    display:flex;gap:12px;align-items:flex-start;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    box-shadow:var(--shadow);padding:14px 16px;
+  }
+  .exp-id{font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:15px;color:var(--red);white-space:nowrap;padding-top:1px}
+  .exp-body{flex:1;min-width:0}
+  .exp-name{font-size:15.5px;font-weight:700;line-height:1.45}
+  .exp-desc{font-size:13px;color:var(--text-2);margin-top:2px;line-height:1.6}
+  .status{flex:0 0 auto;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px;white-space:nowrap}
+  .status.doing{background:var(--red);color:#fff}
+  .status.prep{background:var(--bg-soft);color:var(--text-2);border:1px solid var(--line-strong)}
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto}
     .link-card{transition:none}
@@ -245,6 +335,14 @@
   </div>
 </header>
 
+<div class="tabbar" role="tablist" aria-label="表示切替">
+  <div class="tabbar-inner">
+    <button class="tab-btn" type="button" role="tab" id="tabLinks" aria-selected="true" aria-controls="panel-links">リンク<span class="tab-sub">全20リンク・検索つき</span></button>
+    <button class="tab-btn" type="button" role="tab" id="tabMeasure" aria-selected="false" aria-controls="panel-measure">効果測定<span class="tab-sub">毎日軽測定・直近1か月</span></button>
+  </div>
+</div>
+
+<div id="panel-links" role="tabpanel" aria-labelledby="tabLinks">
 <div class="toolbar">
   <div class="toolbar-inner">
     <div class="search-wrap">
@@ -411,6 +509,155 @@
   </div>
   <p class="foot-line">ENN メディアハブ ― Egui News Network 全20リンク</p>
 </footer>
+</div><!-- /panel-links -->
+
+<div id="panel-measure" role="tabpanel" aria-labelledby="tabMeasure" hidden>
+<div class="measure-main">
+
+  <section style="padding-top:18px">
+    <div class="sec-head"><h2>効果測定</h2><span class="count">直近1か月で統一</span></div>
+    <p class="sec-desc">対象は YouTube ENN・Facebook・Instagram・Threads・TikTok・ブログ（egui-jp.com）。毎日軽測定で1日1点ずつ増えていく設計です。詳しい分析（CTR・視聴時間・Search Consoleなど）は週次測定で判定します。</p>
+    <div class="streak-row">
+      <div class="stat-box">
+        <div class="k">発信ストリーク</div>
+        <div class="v">記録開始 <span class="unit">2026-11-17〜</span></div>
+        <div class="d">毎日の軽測定とあわせて、発信が確認できた連続日数をここに積み上げます。</div>
+      </div>
+      <div class="stat-box">
+        <div class="k">毎日軽測定</div>
+        <div class="v">11/17 <span class="unit">スタート</span></div>
+        <div class="d">登録者・フォロワーと累計再生／Viewsなど、毎日動く数字だけを1行ずつ追加します。</div>
+      </div>
+      <div class="stat-box">
+        <div class="k">最新の実測</div>
+        <div class="v">11/16 <span class="unit">週次測定</span></div>
+        <div class="d">ブログ表示回数 3,084（28日）など、下のカードとグラフは実測点だけを載せています。</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>ペッパーの応援コメント</h2><span class="count">毎日1件・最新が上</span></div>
+    <p class="sec-desc">毎日の軽測定のたびに1件ずつ追加され、直近30日分まで履歴が残ります。</p>
+    <!-- DAILY-COMMENT:START -->
+    <div class="comment-list" id="commentList">
+      <article class="comment-item">
+        <span class="date">2026-11-17</span>
+        <p>殿、今日から毎日グラフに点が増えていくよ。再生は毎日発信してる証拠だから、フォロワーが横ばいの日も線はちゃんと伸びる。寂しくないグラフにしようね❤️</p>
+      </article>
+    </div>
+    <!-- DAILY-COMMENT:END -->
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>メディア別・最新値</h2><span class="count">6メディア</span></div>
+    <p class="sec-desc">主役は毎日伸びる累計再生・Views。フォロワー・登録者は補助指標として併記しています。</p>
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="m-name">YouTube ENN <span class="badge-wait">日次測定は11/17開始</span></div>
+        <div class="m-label">累計再生（主指標）</div>
+        <div class="m-value">測定開始前</div>
+        <div class="m-sub">登録者（補助）も初回測定から併記します。前日比は2点目から表示。</div>
+        <div class="m-sub">※旧 Egui Japan チャンネルの登録者145は参考値のため、ENNのグラフには混ぜていません。</div>
+        <div class="m-date">測定日：—（毎日軽測定の初回待ち）</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-name">ブログ <span class="badge-live">実測あり</span></div>
+        <div class="m-label">表示回数（Search Console・28日）</div>
+        <div class="m-value">3,084<span class="unit"> 回</span> <span class="delta">+447</span></div>
+        <div class="m-sub">クリック 17（前回比 ±0）／ GA4（28日）PV 157・ユーザー 131</div>
+        <div class="m-date">測定日：2026-11-16（表示・クリックは10/17〜11/13、GA4は10/19〜11/15）</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-name">Facebook</div>
+        <div class="m-label">28日 Views（主指標）</div>
+        <div class="m-value">59<span class="unit"> 回</span> <span class="delta flat">前日比 —</span></div>
+        <div class="m-sub">フォロワー（補助）1</div>
+        <div class="m-date">測定日：2026-11-06（次回から毎日軽測定）</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-name">Instagram</div>
+        <div class="m-label">フォロワー（補助）</div>
+        <div class="m-value">1<span class="unit"> 人</span> <span class="delta flat">前日比 —</span></div>
+        <div class="m-sub">投稿 21件。Viewsは毎日軽測定の初回から主指標で併記します。</div>
+        <div class="m-date">測定日：2026-11-06（次回から毎日軽測定）</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-name">Threads</div>
+        <div class="m-label">フォロワー（補助）</div>
+        <div class="m-value">1<span class="unit"> 人</span> <span class="delta flat">前日比 —</span></div>
+        <div class="m-sub">投稿 19件</div>
+        <div class="m-date">測定日：2026-11-06（次回から毎日軽測定）</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-name">TikTok <span class="badge-wait">日次測定は11/17開始</span></div>
+        <div class="m-label">累計再生（主指標）</div>
+        <div class="m-value">測定開始前</div>
+        <div class="m-sub">フォロワー（補助）も初回測定から併記します。前日比は2点目から表示。</div>
+        <div class="m-date">測定日：—（毎日軽測定の初回待ち）</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>推移グラフ</h2><span class="count">直近1か月</span></div>
+    <p class="sec-desc">指標を切り替えて表示できます。点は実測だけ。毎日測定で点が増えていきます。</p>
+    <div class="chart-card">
+      <div class="seg-row" role="group" aria-label="グラフの指標を選ぶ" id="segRow">
+        <button class="seg-btn" type="button" data-ds="blogImp" aria-pressed="true">ブログ 表示回数</button>
+        <button class="seg-btn" type="button" data-ds="blogClick" aria-pressed="false">ブログ クリック</button>
+        <button class="seg-btn" type="button" data-ds="ga4pv" aria-pressed="false">ブログ PV（GA4）</button>
+        <button class="seg-btn" type="button" data-ds="fbViews" aria-pressed="false">Facebook Views</button>
+        <button class="seg-btn" type="button" data-ds="ytEnn" aria-pressed="false">YouTube ENN 再生</button>
+        <button class="seg-btn" type="button" data-ds="tiktok" aria-pressed="false">TikTok 再生</button>
+      </div>
+      <div id="chartBox" aria-live="polite"></div>
+      <p class="chart-note" id="chartNote"></p>
+      <div id="chartTableWrap"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>改善実験</h2><span class="count">E001〜E003</span></div>
+    <p class="sec-desc">測定とセットで回している実験の状態。判定は週次測定で行います。</p>
+    <div class="exp-list">
+      <div class="exp-item">
+        <span class="exp-id">E001</span>
+        <div class="exp-body">
+          <div class="exp-name">サムネ実験</div>
+          <div class="exp-desc">YouTubeのサムネイル改善の効果を、週次測定の数字で判定します。</div>
+        </div>
+        <span class="status prep">準備中</span>
+      </div>
+      <div class="exp-item">
+        <span class="exp-id">E002</span>
+        <div class="exp-body">
+          <div class="exp-name">公開10時のSNS告知で送客</div>
+          <div class="exp-desc">公開時刻を10時にそろえたSNS告知が、再生・Viewsの伸びに効いているかを見ます。</div>
+        </div>
+        <span class="status doing">進行中</span>
+      </div>
+      <div class="exp-item">
+        <span class="exp-id">E003</span>
+        <div class="exp-body">
+          <div class="exp-name">Instagramリール形式試験</div>
+          <div class="exp-desc">Instagramのリール形式を変えて、リーチの変化を週次で確認します。</div>
+        </div>
+        <span class="status prep">準備中</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="note">
+      <p>基準値について（2026-11-06）</p>
+      <p>ブログ Search Console（28日）表示 2,637／クリック 17、Facebook・Instagram・Threads のフォロワーは各1、Facebook 28日 Views 59、Instagram 投稿21件、Threads 投稿19件。Substack は購読者 有料1・無料4（参考）。YouTube の登録者145は旧チャンネルの値なので、ENNの推移には入れていません。ENNとTikTokの日次点は 2026-11-17 の毎日軽測定から1点ずつ増えます。</p>
+    </div>
+    <p class="foot-line">ENN メディアハブ ― 効果測定（毎日軽測定＋週次判定）</p>
+  </section>
+
+</div>
+</div><!-- /panel-measure -->
 
 <script>
 (function(){
@@ -473,6 +720,106 @@
   clearBtn.addEventListener('click', clearSearch);
   document.getElementById('resetBtn').addEventListener('click', clearSearch);
   apply();
+})();
+
+/* ---------- Tabs + Measurement chart ---------- */
+(function(){
+  var tabLinks = document.getElementById('tabLinks');
+  var tabMeasure = document.getElementById('tabMeasure');
+  var panelLinks = document.getElementById('panel-links');
+  var panelMeasure = document.getElementById('panel-measure');
+  function show(measure){
+    tabLinks.setAttribute('aria-selected', measure ? 'false' : 'true');
+    tabMeasure.setAttribute('aria-selected', measure ? 'true' : 'false');
+    panelLinks.hidden = measure;
+    panelMeasure.hidden = !measure;
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  tabLinks.addEventListener('click', function(){ show(false); });
+  tabMeasure.addEventListener('click', function(){ show(true); });
+
+  /* 実測点のみ。ENN・TikTokの日次点は2026-11-17の毎日軽測定から追加される */
+  var DATASETS = {
+    blogImp:  { label:'ブログ 表示回数（Search Console・28日）', unit:'回',
+      note:'実測2点：2026-11-06 基準値 2,637 → 2026-11-16 週次測定 3,084（+447）。毎日測定で点が増えていきます。',
+      points:[{d:'2026-11-06', v:2637},{d:'2026-11-16', v:3084}] },
+    blogClick:{ label:'ブログ クリック（Search Console・28日）', unit:'回',
+      note:'実測2点：11/06・11/16 ともに 17（±0）。表示は伸びているので、クリックへの転換が次の焦点です。',
+      points:[{d:'2026-11-06', v:17},{d:'2026-11-16', v:17}] },
+    ga4pv:    { label:'ブログ PV（GA4・28日）', unit:'PV',
+      note:'実測1点：2026-11-16 に 157 PV（ユーザー131）。2点目から線になります。',
+      points:[{d:'2026-11-16', v:157}] },
+    fbViews:  { label:'Facebook Views（28日）', unit:'回',
+      note:'実測1点：2026-11-06 に 59。次回から毎日軽測定で点が増えます。',
+      points:[{d:'2026-11-06', v:59}] },
+    ytEnn:    { label:'YouTube ENN 累計再生', unit:'回',
+      note:'ENNの日次点はまだありません。2026-11-17の毎日軽測定から1日1点ずつ増えていきます（旧チャンネルの値は混ぜていません）。',
+      points:[] },
+    tiktok:   { label:'TikTok 累計再生', unit:'回',
+      note:'TikTokの日次点はまだありません。2026-11-17の毎日軽測定から1日1点ずつ増えていきます。',
+      points:[] }
+  };
+
+  var box = document.getElementById('chartBox');
+  var note = document.getElementById('chartNote');
+  var tableWrap = document.getElementById('chartTableWrap');
+  var segBtns = Array.prototype.slice.call(document.querySelectorAll('#segRow .seg-btn'));
+
+  function fmt(n){ return n.toLocaleString('ja-JP'); }
+  function shortDate(d){ var p = d.split('-'); return parseInt(p[1],10) + '/' + parseInt(p[2],10); }
+  function esc(s){ return s.replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+  function render(key){
+    var ds = DATASETS[key];
+    if(!ds || !box) return;
+    segBtns.forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-ds') === key ? 'true' : 'false'); });
+    note.textContent = ds.note;
+    var pts = ds.points;
+    if(pts.length === 0){
+      box.innerHTML = '<div class="chart-empty"><strong>' + esc(ds.label) + '</strong><br>まだ測定点がありません。<br>毎日軽測定の初回から、ここに点と線が育っていきます。</div>';
+      tableWrap.innerHTML = '';
+      return;
+    }
+    /* table */
+    var rows = pts.map(function(p, i){
+      var diff = i === 0 ? '—' : ((p.v - pts[i-1].v) >= 0 ? '+' : '') + fmt(p.v - pts[i-1].v);
+      return '<tr><td>' + esc(p.d) + '</td><td class="num">' + fmt(p.v) + ' ' + esc(ds.unit) + '</td><td class="num">' + diff + '</td></tr>';
+    }).join('');
+    tableWrap.innerHTML = '<table class="data-table"><caption style="text-align:left;font-weight:700;padding:6px 10px 2px">' + esc(ds.label) + ' ― 実測点</caption><thead><tr><th>測定日</th><th class="num">値</th><th class="num">前回比</th></tr></thead><tbody>' + rows + '</tbody></table>';
+
+    /* svg chart */
+    var W = 640, H = 264, L = 58, R = 18, T = 20, B = 38;
+    var iw = W - L - R, ih = H - T - B;
+    var vals = pts.map(function(p){ return p.v; });
+    var mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals);
+    if(mn === mx){ var pad0 = Math.max(1, Math.round(mx * 0.15)); mn -= pad0; mx += pad0; }
+    else { var pad = (mx - mn) * 0.18; mn = Math.max(0, Math.floor(mn - pad)); mx = Math.ceil(mx + pad); }
+    function X(i){ return pts.length === 1 ? L + iw / 2 : L + (iw * i / (pts.length - 1)); }
+    function Y(v){ return T + ih - (ih * (v - mn) / (mx - mn)); }
+    var s = '';
+    s += '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(ds.label) + 'の推移グラフ">';
+    for(var g = 0; g <= 4; g++){
+      var gv = mn + (mx - mn) * g / 4, gy = Y(gv);
+      s += '<line x1="' + L + '" y1="' + gy + '" x2="' + (W - R) + '" y2="' + gy + '" stroke="var(--line)" stroke-width="1"/>';
+      s += '<text x="' + (L - 8) + '" y="' + (gy + 4) + '" text-anchor="end" font-size="11" fill="var(--text-3)">' + fmt(Math.round(gv)) + '</text>';
+    }
+    s += '<text x="4" y="' + (T - 6) + '" font-size="11" fill="var(--text-3)">' + esc(ds.unit) + '</text>';
+    if(pts.length > 1){
+      var line = pts.map(function(p, i){ return (i === 0 ? 'M' : 'L') + X(i).toFixed(1) + ' ' + Y(p.v).toFixed(1); }).join(' ');
+      s += '<path d="' + line + '" fill="none" stroke="var(--red)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>';
+    }
+    pts.forEach(function(p, i){
+      s += '<circle cx="' + X(i) + '" cy="' + Y(p.v) + '" r="5.5" fill="var(--card)" stroke="var(--red)" stroke-width="3"/>';
+      s += '<text x="' + X(i) + '" y="' + (Y(p.v) - 12) + '" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text)">' + fmt(p.v) + '</text>';
+      s += '<text x="' + X(i) + '" y="' + (H - 12) + '" text-anchor="middle" font-size="11.5" fill="var(--text-2)">' + shortDate(p.d) + '</text>';
+    });
+    s += '</svg>';
+    box.innerHTML = s;
+  }
+  segBtns.forEach(function(b){
+    b.addEventListener('click', function(){ render(b.getAttribute('data-ds')); });
+  });
+  render('blogImp');
 })();
 </script>
 </body>
