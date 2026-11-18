@@ -329,6 +329,87 @@
   .status{flex:0 0 auto;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px;white-space:nowrap}
   .status.doing{background:var(--red);color:#fff}
   .status.prep{background:var(--bg-soft);color:var(--text-2);border:1px solid var(--line-strong)}
+  /* ---------- Calendar ---------- */
+  .cal-main{max-width:1020px;margin:0 auto;padding:8px 16px 12px}
+  .cal-legend{display:flex;gap:8px 18px;flex-wrap:wrap;margin:2px 0 14px}
+  .cal-legend .lg{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700}
+  .cal-dot{width:11px;height:11px;border-radius:999px;flex:0 0 11px;background:var(--sc)}
+  .cal-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 10px}
+  .cal-title{font-size:19px;font-weight:800;letter-spacing:.02em}
+  .cal-nav-btn{
+    min-height:44px;padding:8px 16px;border-radius:999px;cursor:pointer;
+    border:1px solid var(--line-strong);background:var(--card);
+    font-family:inherit;font-size:14px;font-weight:800;color:var(--text);
+  }
+  .cal-nav-btn:disabled{opacity:.35;cursor:default}
+  .cal-dow-row,.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+  .cal-dow{font-size:12px;font-weight:800;color:var(--text-3);text-align:center;padding:2px 0 4px}
+  .cal-cell{
+    min-height:62px;padding:5px 6px;
+    border:1px solid var(--line);border-radius:10px;background:var(--card);
+    font-family:inherit;cursor:pointer;color:var(--text);
+    display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;
+  }
+  .cal-cell .dnum{font-size:14px;font-weight:700;line-height:1.25;padding:0 6px;border-radius:999px}
+  .cal-cell.other{opacity:.42}
+  .cal-cell.today{box-shadow:inset 0 0 0 2px var(--red)}
+  .cal-cell.today .dnum{background:var(--red);color:#fff;font-weight:800}
+  .cal-cell.selected{background:var(--red-tint)}
+  .cal-marks{display:flex;flex-direction:column;gap:3px}
+  .cal-mark{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:800;color:var(--text-2);line-height:1}
+  .cal-mark .cal-dot{width:10px;height:10px;flex-basis:10px}
+  .cal-detail{
+    margin-top:16px;background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;
+  }
+  .cal-detail h3{margin:0;font-size:17px;font-weight:800}
+  .cal-detail .cnt{
+    font-size:12.5px;font-weight:700;color:var(--red);
+    background:var(--red-tint);border:1px solid var(--red-tint-2);
+    padding:2px 9px;border-radius:999px;margin-left:8px;vertical-align:2px;white-space:nowrap;
+  }
+  .ev-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line)}
+  .ev-item:first-child{border-top:none;padding-top:6px}
+  .ev-time{flex:0 0 48px;font-size:14.5px;font-weight:800;font-variant-numeric:tabular-nums;padding-top:3px}
+  .ev-body{flex:1;min-width:0}
+  .ev-top{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .series-badge{
+    display:inline-flex;align-items:center;gap:6px;padding:2px 10px;border-radius:999px;
+    font-size:11.5px;font-weight:800;white-space:nowrap;
+    border:1px solid color-mix(in srgb,var(--sc) 55%,transparent);
+    background:color-mix(in srgb,var(--sc) 13%,var(--card));
+  }
+  .series-badge::before{content:"";width:8px;height:8px;border-radius:999px;background:var(--sc);flex:0 0 8px}
+  .st-chip{
+    display:inline-flex;align-items:center;padding:2px 9px;border-radius:999px;
+    font-size:11.5px;font-weight:800;white-space:nowrap;color:var(--text);
+    border:1px solid color-mix(in srgb,var(--stc) 55%,transparent);
+    background:color-mix(in srgb,var(--stc) 14%,var(--card));
+  }
+  .st-pub{--stc:#1d9e57}
+  .st-res{--stc:#2f6bd8}
+  .st-res2{--stc:#0d9488}
+  .st-plan{--stc:#d97706}
+  .ev-title{font-size:15px;font-weight:700;line-height:1.5;margin-top:5px;overflow-wrap:anywhere}
+  .ev-meta{font-size:12.5px;color:var(--text-2);margin-top:2px;line-height:1.6;overflow-wrap:anywhere}
+  .ev-note{font-size:12.5px;color:var(--text-2);margin-top:2px}
+  .ev-note::before{content:"備考：";font-weight:700}
+  .cal-empty{padding:14px 0 4px;color:var(--text-2);font-size:14.5px;margin:0}
+  .undated-list{display:flex;flex-direction:column;gap:10px}
+  .undated-item{
+    display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    box-shadow:var(--shadow);padding:12px 16px;font-size:14.5px;font-weight:700;
+  }
+  .cal-foot-note{font-size:12.5px;color:var(--text-3);line-height:1.7;margin:4px 2px 0}
+  @media (max-width:560px){
+    .tabbar-inner{gap:6px;padding:10px 10px 0}
+    .tab-btn{padding:10px 4px;font-size:13px}
+    .tab-btn .tab-sub{font-size:10.5px}
+    .cal-cell{min-height:56px;padding:4px}
+    .cal-detail{padding:14px}
+    .ev-time{flex-basis:42px;font-size:13.5px}
+  }
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto}
     .link-card{transition:none}
@@ -360,6 +441,7 @@
   <div class="tabbar-inner">
     <button class="tab-btn" type="button" role="tab" id="tabLinks" aria-selected="true" aria-controls="panel-links">リンク<span class="tab-sub">全20リンク・検索つき</span></button>
     <button class="tab-btn" type="button" role="tab" id="tabMeasure" aria-selected="false" aria-controls="panel-measure">効果測定<span class="tab-sub">毎日軽測定・直近1か月</span></button>
+    <button class="tab-btn" type="button" role="tab" id="tabCalendar" aria-selected="false" aria-controls="panel-calendar">配信カレンダー<span class="tab-sub" id="tabCalSub">11/15〜1/17・全80件</span></button>
   </div>
 </div>
 
@@ -684,6 +766,47 @@
 </div>
 </div><!-- /panel-measure -->
 
+<div id="panel-calendar" role="tabpanel" aria-labelledby="tabCalendar" hidden>
+<div class="cal-main">
+
+  <section style="padding-top:18px">
+    <div class="sec-head"><h2>配信カレンダー</h2><span class="count" id="calCount">全80件</span></div>
+    <p class="sec-desc">2026年11月〜2027年1月の配信予定です。日付を押すと、その日の配信一覧が下に表示されます。</p>
+    <div class="cal-legend" id="calLegend" aria-label="シリーズ凡例"></div>
+    <div class="cal-nav">
+      <button class="cal-nav-btn" type="button" id="calPrev">← 前月</button>
+      <div class="cal-title" id="calTitle">2026年11月</div>
+      <button class="cal-nav-btn" type="button" id="calNext">翌月 →</button>
+    </div>
+    <div class="cal-dow-row" aria-hidden="true">
+      <div class="cal-dow">日</div>
+      <div class="cal-dow">月</div>
+      <div class="cal-dow">火</div>
+      <div class="cal-dow">水</div>
+      <div class="cal-dow">木</div>
+      <div class="cal-dow">金</div>
+      <div class="cal-dow">土</div>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+    <div class="cal-detail" id="calDetail" aria-live="polite"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>日付未定</h2><span class="count">2件</span></div>
+    <div class="undated-list">
+      <div class="undated-item"><span class="series-badge" style="--sc:#a4131f">日本史 本編</span><span>ep17（動画完成・公開日未定）</span></div>
+      <div class="undated-item"><span class="series-badge" style="--sc:#a4131f">日本史 本編</span><span>ep18（動画完成・公開日未定）</span></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="cal-foot-note">データはハブ担当が手で更新します。ショート配信計画表との自動同期は将来課題です。</p>
+    <p class="foot-line">ENN メディアハブ ― 配信カレンダー（2026年11月〜2027年1月）</p>
+  </section>
+
+</div>
+</div><!-- /panel-calendar -->
+
 <script>
 (function(){
   var input = document.getElementById('search');
@@ -751,17 +874,22 @@
 (function(){
   var tabLinks = document.getElementById('tabLinks');
   var tabMeasure = document.getElementById('tabMeasure');
+  var tabCalendar = document.getElementById('tabCalendar');
   var panelLinks = document.getElementById('panel-links');
   var panelMeasure = document.getElementById('panel-measure');
-  function show(measure){
-    tabLinks.setAttribute('aria-selected', measure ? 'false' : 'true');
-    tabMeasure.setAttribute('aria-selected', measure ? 'true' : 'false');
-    panelLinks.hidden = measure;
-    panelMeasure.hidden = !measure;
+  var panelCalendar = document.getElementById('panel-calendar');
+  function show(mode){
+    tabLinks.setAttribute('aria-selected', mode === 'links' ? 'true' : 'false');
+    tabMeasure.setAttribute('aria-selected', mode === 'measure' ? 'true' : 'false');
+    tabCalendar.setAttribute('aria-selected', mode === 'calendar' ? 'true' : 'false');
+    panelLinks.hidden = mode !== 'links';
+    panelMeasure.hidden = mode !== 'measure';
+    panelCalendar.hidden = mode !== 'calendar';
     window.scrollTo({top:0, behavior:'smooth'});
   }
-  tabLinks.addEventListener('click', function(){ show(false); });
-  tabMeasure.addEventListener('click', function(){ show(true); });
+  tabLinks.addEventListener('click', function(){ show('links'); });
+  tabMeasure.addEventListener('click', function(){ show('measure'); });
+  tabCalendar.addEventListener('click', function(){ show('calendar'); });
 
   /* 実測点のみ。ENN・TikTokの日次点は2026-11-17の毎日軽測定から追加される */
   var DATASETS = {
@@ -889,6 +1017,234 @@
       }
     });
   });
+})();
+</script>
+<script>
+/* ---------- Delivery calendar ---------- */
+(function(){
+  /* シリーズ定義：シリーズの追加はここに1行足すだけ */
+  var SERIES = {
+    shorts: {name:'日本史ショート', color:'#2f6bd8'},
+    honpen: {name:'日本史 本編', color:'#a4131f'},
+    seppuku:{name:'Substack 切腹', color:'#7c3aed'},
+    yamada: {name:'Substack 山田浅右衛門', color:'#1d9e57'}
+  };
+  /* 配信イベント：{d:日付, t:時刻（無ければ空文字）, s:シリーズ, no:話数, title, media:媒体, st:状態, note:備考（任意）} */
+  var EVENTS = [
+    /* 本編 */
+    {d:'2026-11-16', t:'', s:'honpen', no:'ep13', title:'江戸時代（本編）', media:'YouTube／ブログ／Substack／ポッドキャスト', st:'公開済み'},
+    {d:'2026-11-16', t:'', s:'honpen', no:'ep14', title:'幕末（本編）', media:'YouTube／ブログ／Substack／ポッドキャスト', st:'公開済み'},
+    {d:'2026-11-18', t:'', s:'honpen', no:'ep15', title:'明治（本編）', media:'YouTube／ブログ／Substack／ポッドキャスト', st:'予定', note:'11/18公開狙い・ゲート待ち'},
+    {d:'2026-11-19', t:'', s:'honpen', no:'ep16', title:'本編 第16回', media:'YouTube／ブログ／Substack／ポッドキャスト', st:'予定', note:'11/19公開狙い'},
+    /* Substack 切腹 */
+    {d:'2026-11-22', t:'12:00', s:'seppuku', no:'Ep1', title:'Seppuku Ep1', media:'Substack（Paid）', st:'予定', note:'日曜12:00'},
+    {d:'2026-11-29', t:'12:00', s:'seppuku', no:'Ep2', title:'Seppuku Ep2', media:'Substack（Paid）', st:'予定', note:'日曜12:00'},
+    {d:'2026-12-06', t:'12:00', s:'seppuku', no:'Ep3', title:'Seppuku Ep3', media:'Substack（Paid）', st:'予定', note:'日曜12:00'},
+    {d:'2026-12-13', t:'12:00', s:'seppuku', no:'Ep4', title:'Seppuku Ep4（最終回）', media:'Substack（Paid）', st:'予定', note:'日曜12:00'},
+    /* Substack 山田浅右衛門 */
+    {d:'2026-12-14', t:'12:00', s:'yamada', no:'告知', title:'山田浅右衛門 シリーズ告知', media:'Substack', st:'予定'},
+    {d:'2026-12-20', t:'12:00', s:'yamada', no:'Ep1', title:'Yamada Asaemon Ep1', media:'Substack（Paid）', st:'予定', note:'日曜12:00'},
+    {d:'2026-12-27', t:'12:00', s:'yamada', no:'Ep2', title:'Yamada Asaemon Ep2', media:'Substack（Paid）', st:'予定', note:'日曜12:00'},
+    {d:'2027-01-03', t:'12:00', s:'yamada', no:'Ep3', title:'Yamada Asaemon Ep3', media:'Substack（Paid）', st:'予定', note:'日曜12:00'},
+    {d:'2027-01-10', t:'12:00', s:'yamada', no:'Ep4', title:'Yamada Asaemon Ep4', media:'Substack（Paid）', st:'予定', note:'日曜12:00'},
+    {d:'2027-01-17', t:'12:00', s:'yamada', no:'Ep5', title:'Yamada Asaemon Ep5（最終回）', media:'Substack（Paid）', st:'予定', note:'日曜12:00'},
+    /* 日本史ショート（媒体はすべて YouTube／Instagram／TikTok／Facebook） */
+    {d:'2026-11-15', t:'一括', s:'shorts', no:'ep10 室町 全5本', title:'ep10ショート全5本一括配信', media:'YouTube／Instagram／TikTok／Facebook', st:'配信済み'},
+    {d:'2026-11-16', t:'11:00', s:'shorts', no:'ep11 戦国 #1', title:'The Rise of Hojo Soun', media:'YouTube／Instagram／TikTok／Facebook', st:'公開済み'},
+    {d:'2026-11-16', t:'23:00', s:'shorts', no:'ep11 戦国 #2', title:'The Battle of Kawagoe — 1546', media:'YouTube／Instagram／TikTok／Facebook', st:'公開済み'},
+    {d:'2026-11-17', t:'11:00', s:'shorts', no:'ep11 戦国 #3', title:'Kenshin vs Shingen', media:'YouTube／Instagram／TikTok／Facebook', st:'公開済み'},
+    {d:'2026-11-17', t:'23:00', s:'shorts', no:'ep11 戦国 #4', title:'The Battle of Okehazama — 1560', media:'YouTube／Instagram／TikTok／Facebook', st:'公開済み'},
+    {d:'2026-11-18', t:'11:00', s:'shorts', no:'ep11 戦国 #5', title:'The Muromachi Shogunate Falls — 1573', media:'YouTube／Instagram／TikTok／Facebook', st:'公開済み'},
+    {d:'2026-11-18', t:'23:00', s:'shorts', no:'ep12 安土桃山 #1', title:'The Honno-ji Incident — 1582', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-19', t:'11:00', s:'shorts', no:'ep12 安土桃山 #2', title:'The Fight for the Realm', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-19', t:'23:00', s:'shorts', no:'ep12 安土桃山 #3', title:'The Last Shogun Is Expelled — 1573', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-20', t:'11:00', s:'shorts', no:'ep12 安土桃山 #4', title:'The Invasions of Korea — 1592', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-20', t:'23:00', s:'shorts', no:'ep12 安土桃山 #5', title:'The Battle of Sekigahara — 1600', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-21', t:'11:00', s:'shorts', no:'ep9 南北朝 #1', title:'Three Emperors Kidnapped! — 1352', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-21', t:'23:00', s:'shorts', no:'ep9 南北朝 #2', title:'The Shogun Bowed Down — 1351', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-22', t:'11:00', s:'shorts', no:'ep9 南北朝 #3', title:'The Heroes Fall — 1338', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-22', t:'23:00', s:'shorts', no:'ep9 南北朝 #4', title:"The Emperor's Last Words — 1339", media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-23', t:'11:00', s:'shorts', no:'ep9 南北朝 #5', title:'The Broken Promise — 1392', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-23', t:'23:00', s:'shorts', no:'ep8 建武 #1', title:'A Prince Killed in His Cell — 1335', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-24', t:'11:00', s:'shorts', no:'ep8 建武 #2', title:'Give Land, Rule Warriors — 1335', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-24', t:'23:00', s:'shorts', no:'ep8 建武 #3', title:'Enemy of the Throne', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-25', t:'11:00', s:'shorts', no:'ep8 建武 #4', title:'He Almost Took His Life — 1336', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-25', t:'23:00', s:'shorts', no:'ep8 建武 #5', title:'He Knew He Would Die — 1336', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-26', t:'11:00', s:'shorts', no:'ep7 鎌倉滅亡 #1', title:'The First Plot Was Exposed — 1324', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-26', t:'23:00', s:'shorts', no:'ep7 鎌倉滅亡 #2', title:'The Emperor Was Captured — 1331', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-27', t:'11:00', s:'shorts', no:'ep7 鎌倉滅亡 #3', title:'He Burned His Own Castle', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-27', t:'23:00', s:'shorts', no:'ep7 鎌倉滅亡 #4', title:'Surrender Meant Death — 1333', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-28', t:'11:00', s:'shorts', no:'ep7 鎌倉滅亡 #5', title:'The Shogunate Falls — 1333', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み'},
+    {d:'2026-11-28', t:'23:00', s:'shorts', no:'ep6 鎌倉 #1', title:'A Shogun Locked Away and Killed', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-11-29', t:'11:00', s:'shorts', no:'ep6 鎌倉 #2', title:'The Last Minamoto Shogun — 1219', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-11-29', t:'23:00', s:'shorts', no:'ep6 鎌倉 #3', title:'A Widow Saved the Shogunate — 1221', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-11-30', t:'11:00', s:'shorts', no:'ep6 鎌倉 #4', title:'An Enemy from Across the Sea — 1274', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-11-30', t:'23:00', s:'shorts', no:'ep6 鎌倉 #5', title:'The Promise Could Not Be Kept', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-01', t:'11:00', s:'shorts', no:'ep1 流れ（導入） #1', title:'Rice Created Inequality', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-01', t:'23:00', s:'shorts', no:'ep1 流れ（導入） #2', title:'Giant Tombs as Billboards of Power', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-02', t:'11:00', s:'shorts', no:'ep1 流れ（導入） #3', title:'Power Behind the Throne', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-02', t:'23:00', s:'shorts', no:'ep1 流れ（導入） #4', title:'Three Men Unified Japan', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-03', t:'11:00', s:'shorts', no:'ep1 流れ（導入） #5', title:'260 Years of Peace Came to an End — 1853', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-03', t:'23:00', s:'shorts', no:'ep2 飛鳥 #1', title:'The First Religious War — 587', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-04', t:'11:00', s:'shorts', no:'ep2 飛鳥 #2', title:'The Clan That Ran Japan', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-04', t:'23:00', s:'shorts', no:'ep2 飛鳥 #3', title:'Murder in the Palace — 645', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-05', t:'11:00', s:'shorts', no:'ep2 飛鳥 #4', title:'Disaster Across the Sea', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-05', t:'23:00', s:'shorts', no:'ep2 飛鳥 #5', title:'War Inside the Royal Family — 672', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-06', t:'11:00', s:'shorts', no:'ep3 奈良 #1', title:'A Royal Family Died in One Day — 729', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-06', t:'23:00', s:'shorts', no:'ep3 奈良 #2', title:'The Plague That Ended Them', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-07', t:'11:00', s:'shorts', no:'ep3 奈良 #3', title:'The Man Who Wed His Way to Power', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-07', t:'23:00', s:'shorts', no:'ep3 奈良 #4', title:'The Monk Who Almost Became Emperor', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-08', t:'11:00', s:'shorts', no:'ep3 奈良 #5', title:'A New Bloodline Needs a New Capital — 794', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-08', t:'23:00', s:'shorts', no:'ep4 平安 #1', title:'The First Regent — 866', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-09', t:'11:00', s:'shorts', no:'ep4 平安 #2', title:'The Full-Moon Poem — 1018', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-09', t:'23:00', s:'shorts', no:'ep4 平安 #3', title:'He Retired and Ruled — 1086', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-10', t:'11:00', s:'shorts', no:'ep4 平安 #4', title:'The Warrior Grandfather', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-10', t:'23:00', s:'shorts', no:'ep4 平安 #5', title:'The Fall of the Taira — 1185', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-11', t:'11:00', s:'shorts', no:'ep5 源平 #1', title:'The Mercy That Doomed the Taira', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-11', t:'23:00', s:'shorts', no:'ep5 源平 #2', title:'The Order That Started the War', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-12', t:'11:00', s:'shorts', no:'ep5 源平 #3', title:'They Fled With the Sacred Treasures — 1183', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-12', t:'23:00', s:'shorts', no:'ep5 源平 #4', title:'The Genius of the Battlefield', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-13', t:'11:00', s:'shorts', no:'ep5 源平 #5', title:'Dan-no-ura: The End of the Taira — 1185', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-13', t:'23:00', s:'shorts', no:'ep13 江戸 #1', title:'The Hostages Who Kept the Peace', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-14', t:'11:00', s:'shorts', no:'ep13 江戸 #2', title:'Watched From Every Side', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-14', t:'23:00', s:'shorts', no:'ep13 江戸 #3', title:'Japan Closes Its Doors — 1639', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-15', t:'11:00', s:'shorts', no:'ep13 江戸 #4', title:'Edo, the City of a Million', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-15', t:'23:00', s:'shorts', no:'ep13 江戸 #5', title:'The Samurai Sank Into Debt', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-16', t:'11:00', s:'shorts', no:'ep14 幕末 #1', title:'Four Black Ships — 1853', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
+    {d:'2026-12-16', t:'23:00', s:'shorts', no:'ep14 幕末 #2', title:'Cut Down in the Snow — 1860', media:'YouTube／Instagram／TikTok／Facebook', st:'予定'},
+    {d:'2026-12-17', t:'11:00', s:'shorts', no:'ep14 幕末 #3', title:'The Lesson of the Cannons', media:'YouTube／Instagram／TikTok／Facebook', st:'予定'},
+    {d:'2026-12-17', t:'23:00', s:'shorts', no:'ep14 幕末 #4', title:'Enemies Shake Hands — 1866', media:'YouTube／Instagram／TikTok／Facebook', st:'予定'},
+    {d:'2026-12-18', t:'11:00', s:'shorts', no:'ep14 幕末 #5', title:'The Shogun Gives It Back — 1867', media:'YouTube／Instagram／TikTok／Facebook', st:'予定'}
+  ];
+
+  var TODAY = '2026-11-18';
+  var DOW = ['日','月','火','水','木','金','土'];
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function keyOf(y, m, d){ return y + '-' + pad(m + 1) + '-' + pad(d); }
+
+  var byDate = {};
+  EVENTS.forEach(function(e){ (byDate[e.d] = byDate[e.d] || []).push(e); });
+
+  /* 凡例 */
+  var legend = document.getElementById('calLegend');
+  if(legend){
+    legend.innerHTML = Object.keys(SERIES).map(function(k){
+      return '<span class="lg"><span class="cal-dot" style="--sc:' + SERIES[k].color + '"></span>' + esc(SERIES[k].name) + '</span>';
+    }).join('');
+  }
+
+  /* 件数とタブのサブ表記はデータから生成 */
+  var sortedDates = EVENTS.map(function(e){ return e.d; }).sort();
+  function md(ds){ var p = ds.split('-'); return parseInt(p[1], 10) + '/' + parseInt(p[2], 10); }
+  var sub = document.getElementById('tabCalSub');
+  if(sub && sortedDates.length) sub.textContent = md(sortedDates[0]) + '〜' + md(sortedDates[sortedDates.length - 1]) + '・全' + EVENTS.length + '件';
+  var cnt = document.getElementById('calCount');
+  if(cnt) cnt.textContent = '全' + EVENTS.length + '件';
+
+  var MIN = {y:2026, m:10}, MAX = {y:2027, m:0};
+  var cur = {y:2026, m:10};
+  var selected = TODAY;
+  var titleEl = document.getElementById('calTitle');
+  var gridEl = document.getElementById('calGrid');
+  var prevBtn = document.getElementById('calPrev');
+  var nextBtn = document.getElementById('calNext');
+  var detailEl = document.getElementById('calDetail');
+  function cmp(a, b){ return (a.y - b.y) * 12 + (a.m - b.m); }
+
+  function marksFor(list){
+    var counts = {};
+    list.forEach(function(e){ counts[e.s] = (counts[e.s] || 0) + 1; });
+    return Object.keys(SERIES).filter(function(k){ return counts[k]; }).map(function(k){
+      return '<span class="cal-mark"><span class="cal-dot" style="--sc:' + SERIES[k].color + '"></span>' + (counts[k] > 1 ? '×' + counts[k] : '') + '</span>';
+    }).join('');
+  }
+
+  function renderCal(){
+    titleEl.textContent = cur.y + '年' + (cur.m + 1) + '月';
+    prevBtn.disabled = cmp(cur, MIN) <= 0;
+    nextBtn.disabled = cmp(cur, MAX) >= 0;
+    var startDay = new Date(cur.y, cur.m, 1).getDay();
+    var dim = new Date(cur.y, cur.m + 1, 0).getDate();
+    var total = Math.ceil((startDay + dim) / 7) * 7;
+    var html = '';
+    for(var i = 0; i < total; i++){
+      var dt = new Date(cur.y, cur.m, i - startDay + 1);
+      var k = keyOf(dt.getFullYear(), dt.getMonth(), dt.getDate());
+      var list = byDate[k] || [];
+      var cls = 'cal-cell'
+        + (dt.getMonth() !== cur.m ? ' other' : '')
+        + (k === TODAY ? ' today' : '')
+        + (k === selected ? ' selected' : '');
+      html += '<button type="button" class="' + cls + '" data-date="' + k + '" aria-label="'
+        + dt.getFullYear() + '年' + (dt.getMonth() + 1) + '月' + dt.getDate() + '日'
+        + (list.length ? '、' + list.length + '件の配信' : '') + '">'
+        + '<span class="dnum">' + dt.getDate() + '</span>'
+        + (list.length ? '<span class="cal-marks">' + marksFor(list) + '</span>' : '')
+        + '</button>';
+    }
+    gridEl.innerHTML = html;
+  }
+
+  function stClass(st){
+    if(st === '公開済み' || st === '配信済み') return 'st-pub';
+    if(st.indexOf('IG/FB') !== -1) return 'st-res2';
+    if(st === '予約済み') return 'st-res';
+    return 'st-plan';
+  }
+  function sortKey(e){
+    if(!e.t) return '0';
+    if(/^\d/.test(e.t)) return '0' + e.t;
+    return '1' + e.t;
+  }
+  function renderDetail(){
+    var p = selected.split('-');
+    var dt = new Date(+p[0], +p[1] - 1, +p[2]);
+    var head = (+p[0]) + '年' + (+p[1]) + '月' + (+p[2]) + '日（' + DOW[dt.getDay()] + '）';
+    var list = (byDate[selected] || []).slice().sort(function(a, b){
+      return sortKey(a) < sortKey(b) ? -1 : (sortKey(a) > sortKey(b) ? 1 : 0);
+    });
+    if(!list.length){
+      detailEl.innerHTML = '<h3>' + head + '</h3><p class="cal-empty">この日の配信はありません。</p>';
+      return;
+    }
+    var html = '<h3>' + head + '<span class="cnt">' + list.length + '件</span></h3><div class="ev-list">';
+    list.forEach(function(e){
+      var sr = SERIES[e.s] || {name:e.s, color:'#888888'};
+      html += '<div class="ev-item">'
+        + '<div class="ev-time">' + esc(e.t || '—') + '</div>'
+        + '<div class="ev-body">'
+        + '<div class="ev-top"><span class="series-badge" style="--sc:' + sr.color + '">' + esc(sr.name) + '</span>'
+        + '<span class="st-chip ' + stClass(e.st) + '">' + esc(e.st) + '</span></div>'
+        + '<div class="ev-title">' + esc(e.no) + ' ' + esc(e.title) + '</div>'
+        + '<div class="ev-meta">' + esc(e.media) + '</div>'
+        + (e.note ? '<div class="ev-note">' + esc(e.note) + '</div>' : '')
+        + '</div></div>';
+    });
+    html += '</div>';
+    detailEl.innerHTML = html;
+  }
+
+  gridEl.addEventListener('click', function(ev){
+    var btn = ev.target && ev.target.closest ? ev.target.closest('[data-date]') : null;
+    if(!btn) return;
+    selected = btn.getAttribute('data-date');
+    renderCal();
+    renderDetail();
+  });
+  prevBtn.addEventListener('click', function(){
+    if(cmp(cur, MIN) <= 0) return;
+    cur = cur.m === 0 ? {y:cur.y - 1, m:11} : {y:cur.y, m:cur.m - 1};
+    renderCal();
+  });
+  nextBtn.addEventListener('click', function(){
+    if(cmp(cur, MAX) >= 0) return;
+    cur = cur.m === 11 ? {y:cur.y + 1, m:0} : {y:cur.y, m:cur.m + 1};
+    renderCal();
+  });
+
+  renderCal();
+  renderDetail();
 })();
 </script>
 </body>
