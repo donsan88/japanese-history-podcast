@@ -389,7 +389,9 @@
   .st-pub{--stc:#1d9e57}
   .st-res{--stc:#2f6bd8}
   .st-res2{--stc:#0d9488}
-  .st-plan{--stc:#d97706}
+  .st-plan{--stc:#78716c}
+  .st-none{--stc:#e2480a}
+  .st-chip.st-none{background:color-mix(in srgb,var(--stc) 20%,var(--card));border-color:var(--stc)}
   .ev-title{font-size:15px;font-weight:700;line-height:1.5;margin-top:5px;overflow-wrap:anywhere}
   .ev-meta{font-size:12.5px;color:var(--text-2);margin-top:2px;line-height:1.6;overflow-wrap:anywhere}
   .ev-note{font-size:12.5px;color:var(--text-2);margin-top:2px}
@@ -402,6 +404,31 @@
     box-shadow:var(--shadow);padding:12px 16px;font-size:14.5px;font-weight:700;
   }
   .cal-foot-note{font-size:12.5px;color:var(--text-3);line-height:1.7;margin:4px 2px 0}
+  /* ---------- Calendar v1 additions ---------- */
+  .stock-row{display:grid;grid-template-columns:1fr;gap:10px;margin:0 0 14px}
+  @media (min-width:640px){.stock-row{grid-template-columns:1fr 1fr}}
+  .stock-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 16px}
+  .stock-box .k{font-size:12.5px;font-weight:700;color:var(--text-3)}
+  .stock-box .v{font-size:21px;font-weight:800;margin-top:2px;line-height:1.3}
+  .stock-box .v .unit{font-size:13px;font-weight:700;color:var(--text-2)}
+  .stock-box .d{font-size:12.5px;color:var(--text-2);margin-top:2px}
+  .st-legend{display:flex;gap:6px 8px;flex-wrap:wrap;align-items:center;margin:0 0 14px}
+  .st-legend .lg-label{font-size:12.5px;font-weight:800;color:var(--text-3)}
+  .cal-controls{display:flex;gap:8px 18px;flex-wrap:wrap;align-items:flex-start;margin:0 0 12px}
+  .cal-controls .seg-row{margin:0}
+  .cal-cell.has-unres{border-color:#e2480a;box-shadow:inset 0 0 0 1.5px #e2480a}
+  .cal-tags{display:flex;flex-direction:column;gap:3px;align-items:flex-start;max-width:100%}
+  .cal-tag{font-size:9.5px;font-weight:800;line-height:1.25;padding:2px 5px;border-radius:999px;overflow-wrap:anywhere}
+  .tag-unres{background:#e2480a;color:#fff}
+  .tag-last{background:var(--red-tint);color:var(--red);border:1px solid var(--red)}
+  .week-head{margin:0 0 4px;font-size:13.5px;font-weight:700;color:var(--text-2)}
+  .ev-date{flex:0 0 84px;font-size:13.5px;font-weight:800;padding-top:3px;line-height:1.45}
+  .ev-dtime{display:block;font-size:13px;color:var(--text-2);font-variant-numeric:tabular-nums}
+  .design-memo{margin-top:14px;font-size:12.5px;color:var(--text-2);line-height:1.7}
+  .design-memo .dm-title{font-weight:800;color:var(--text-3);margin:0 0 4px}
+  .design-memo ul{margin:0;padding-left:18px}
+  .design-memo li{margin:2px 0}
+  @media (max-width:560px){.ev-date{flex-basis:68px;font-size:12.5px}.ev-dtime{font-size:12px}}
   @media (max-width:560px){
     .tabbar-inner{gap:6px;padding:10px 10px 0}
     .tab-btn{padding:10px 4px;font-size:13px}
@@ -772,7 +799,29 @@
   <section style="padding-top:18px">
     <div class="sec-head"><h2>配信カレンダー</h2><span class="count" id="calCount">全80件</span></div>
     <p class="sec-desc">2026年11月〜2027年1月の配信予定です。日付を押すと、その日の配信一覧が下に表示されます。</p>
+    <div class="stock-row" id="stockRow" aria-label="在庫メーター"></div>
     <div class="cal-legend" id="calLegend" aria-label="シリーズ凡例"></div>
+    <div class="st-legend" aria-label="状態の凡例">
+      <span class="lg-label">状態：</span>
+      <span class="st-chip st-pub">公開済み／配信済み</span>
+      <span class="st-chip st-res">予約済み</span>
+      <span class="st-chip st-res2">予約済み（IG/FB）＝一部のみ予約</span>
+      <span class="st-chip st-plan">予定</span>
+      <span class="st-chip st-none">未予約（要対応）</span>
+    </div>
+    <div class="cal-controls">
+      <div class="seg-row" role="group" aria-label="シリーズで絞り込む" id="calFilters">
+        <button class="seg-btn" type="button" data-f="all" aria-pressed="true">すべて</button>
+        <button class="seg-btn" type="button" data-f="honpen" aria-pressed="false">本編だけ</button>
+        <button class="seg-btn" type="button" data-f="shorts" aria-pressed="false">ショートだけ</button>
+        <button class="seg-btn" type="button" data-f="substack" aria-pressed="false">Substackだけ</button>
+      </div>
+      <div class="seg-row" role="group" aria-label="表示切替" id="calViews">
+        <button class="seg-btn" type="button" data-v="month" aria-pressed="true">月カレンダー</button>
+        <button class="seg-btn" type="button" data-v="week" aria-pressed="false">今週の配信</button>
+      </div>
+    </div>
+    <div id="calMonthView">
     <div class="cal-nav">
       <button class="cal-nav-btn" type="button" id="calPrev">← 前月</button>
       <div class="cal-title" id="calTitle">2026年11月</div>
@@ -789,6 +838,12 @@
     </div>
     <div class="cal-grid" id="calGrid"></div>
     <div class="cal-detail" id="calDetail" aria-live="polite"></div>
+    </div>
+    <div class="cal-detail" id="calWeekView" hidden>
+      <h3>今週の配信</h3>
+      <p class="week-head" id="weekHead"></p>
+      <div id="weekList"></div>
+    </div>
   </section>
 
   <section>
@@ -801,6 +856,15 @@
 
   <section>
     <p class="cal-foot-note">データはハブ担当が手で更新します。ショート配信計画表との自動同期は将来課題です。</p>
+    <div class="design-memo">
+      <p class="dm-title">設計メモ</p>
+      <ul>
+        <li>v2予定：効果測定との連動（伸びた動画の日に印を付け、効果測定タブとつないで「何を出した日に何が起きたか」を読めるようにする）</li>
+        <li>v2予定：Googleカレンダー購読（静的ICSを生成し、スマホのカレンダーアプリから購読できるようにする）</li>
+        <li>未決定の候補：予約締切の⚠警告、詳細から実物（YouTube等）へのジャンプ</li>
+        <li>原則：カレンダーは表示専用。正本はショート配信計画表と各台帳</li>
+      </ul>
+    </div>
     <p class="foot-line">ENN メディアハブ ― 配信カレンダー（2026年11月〜2027年1月）</p>
   </section>
 
@@ -1022,13 +1086,16 @@
 <script>
 /* ---------- Delivery calendar ---------- */
 (function(){
-  /* シリーズ定義：シリーズの追加はここに1行足すだけ */
+  /* シリーズ定義：シリーズの追加はここに1行足すだけ。
+     channel は将来の「チャンネル→シリーズ」2階層化に備えた所属チャンネル（現状は全シリーズ enn） */
   var SERIES = {
-    shorts: {name:'日本史ショート', color:'#2f6bd8'},
-    honpen: {name:'日本史 本編', color:'#a4131f'},
-    seppuku:{name:'Substack 切腹', color:'#7c3aed'},
-    yamada: {name:'Substack 山田浅右衛門', color:'#1d9e57'}
+    shorts: {name:'日本史ショート', color:'#2f6bd8', channel:'enn'},
+    honpen: {name:'日本史 本編', color:'#a4131f', channel:'enn'},
+    seppuku:{name:'Substack 切腹', color:'#7c3aed', channel:'enn'},
+    yamada: {name:'Substack 山田浅右衛門', color:'#1d9e57', channel:'enn'}
   };
+  /* 長尺在庫（手入力の定数。ショート在庫はEVENTSから動的に計算する） */
+  var STOCK = { honpenLeft: 4, honpenNote: '完成済み未公開 ep15〜ep18' };
   /* 配信イベント：{d:日付, t:時刻（無ければ空文字）, s:シリーズ, no:話数, title, media:媒体, st:状態, note:備考（任意）} */
   var EVENTS = [
     /* 本編 */
@@ -1111,10 +1178,10 @@
     {d:'2026-12-15', t:'11:00', s:'shorts', no:'ep13 江戸 #4', title:'Edo, the City of a Million', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
     {d:'2026-12-15', t:'23:00', s:'shorts', no:'ep13 江戸 #5', title:'The Samurai Sank Into Debt', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
     {d:'2026-12-16', t:'11:00', s:'shorts', no:'ep14 幕末 #1', title:'Four Black Ships — 1853', media:'YouTube／Instagram／TikTok／Facebook', st:'予約済み（IG/FB）', note:'YouTube／TikTokは後日予約'},
-    {d:'2026-12-16', t:'23:00', s:'shorts', no:'ep14 幕末 #2', title:'Cut Down in the Snow — 1860', media:'YouTube／Instagram／TikTok／Facebook', st:'予定'},
-    {d:'2026-12-17', t:'11:00', s:'shorts', no:'ep14 幕末 #3', title:'The Lesson of the Cannons', media:'YouTube／Instagram／TikTok／Facebook', st:'予定'},
-    {d:'2026-12-17', t:'23:00', s:'shorts', no:'ep14 幕末 #4', title:'Enemies Shake Hands — 1866', media:'YouTube／Instagram／TikTok／Facebook', st:'予定'},
-    {d:'2026-12-18', t:'11:00', s:'shorts', no:'ep14 幕末 #5', title:'The Shogun Gives It Back — 1867', media:'YouTube／Instagram／TikTok／Facebook', st:'予定'}
+    {d:'2026-12-16', t:'23:00', s:'shorts', no:'ep14 幕末 #2', title:'Cut Down in the Snow — 1860', media:'YouTube／Instagram／TikTok／Facebook', st:'未予約'},
+    {d:'2026-12-17', t:'11:00', s:'shorts', no:'ep14 幕末 #3', title:'The Lesson of the Cannons', media:'YouTube／Instagram／TikTok／Facebook', st:'未予約'},
+    {d:'2026-12-17', t:'23:00', s:'shorts', no:'ep14 幕末 #4', title:'Enemies Shake Hands — 1866', media:'YouTube／Instagram／TikTok／Facebook', st:'未予約'},
+    {d:'2026-12-18', t:'11:00', s:'shorts', no:'ep14 幕末 #5', title:'The Shogun Gives It Back — 1867', media:'YouTube／Instagram／TikTok／Facebook', st:'未予約'}
   ];
 
   var TODAY = '2026-11-18';
@@ -1171,16 +1238,23 @@
     for(var i = 0; i < total; i++){
       var dt = new Date(cur.y, cur.m, i - startDay + 1);
       var k = keyOf(dt.getFullYear(), dt.getMonth(), dt.getDate());
-      var list = byDate[k] || [];
+      var list = (byDate[k] || []).filter(passFilter);
+      var hasUnres = list.some(function(e){ return e.st === '未予約' && k > TODAY; });
+      var isLastDay = (k === SHORTS_LAST) && list.some(function(e){ return e.s === 'shorts'; });
       var cls = 'cal-cell'
         + (dt.getMonth() !== cur.m ? ' other' : '')
         + (k === TODAY ? ' today' : '')
-        + (k === selected ? ' selected' : '');
+        + (k === selected ? ' selected' : '')
+        + (hasUnres ? ' has-unres' : '');
+      var tags = '';
+      if(hasUnres) tags += '<span class="cal-tag tag-unres">未予約</span>';
+      if(isLastDay) tags += '<span class="cal-tag tag-last">在庫最終日</span>';
       html += '<button type="button" class="' + cls + '" data-date="' + k + '" aria-label="'
         + dt.getFullYear() + '年' + (dt.getMonth() + 1) + '月' + dt.getDate() + '日'
         + (list.length ? '、' + list.length + '件の配信' : '') + '">'
         + '<span class="dnum">' + dt.getDate() + '</span>'
         + (list.length ? '<span class="cal-marks">' + marksFor(list) + '</span>' : '')
+        + (tags ? '<span class="cal-tags">' + tags + '</span>' : '')
         + '</button>';
     }
     gridEl.innerHTML = html;
@@ -1190,6 +1264,7 @@
     if(st === '公開済み' || st === '配信済み') return 'st-pub';
     if(st.indexOf('IG/FB') !== -1) return 'st-res2';
     if(st === '予約済み') return 'st-res';
+    if(st === '未予約') return 'st-none';
     return 'st-plan';
   }
   function sortKey(e){
@@ -1201,11 +1276,12 @@
     var p = selected.split('-');
     var dt = new Date(+p[0], +p[1] - 1, +p[2]);
     var head = (+p[0]) + '年' + (+p[1]) + '月' + (+p[2]) + '日（' + DOW[dt.getDay()] + '）';
-    var list = (byDate[selected] || []).slice().sort(function(a, b){
+    var rawList = byDate[selected] || [];
+    var list = rawList.filter(passFilter).slice().sort(function(a, b){
       return sortKey(a) < sortKey(b) ? -1 : (sortKey(a) > sortKey(b) ? 1 : 0);
     });
     if(!list.length){
-      detailEl.innerHTML = '<h3>' + head + '</h3><p class="cal-empty">この日の配信はありません。</p>';
+      detailEl.innerHTML = '<h3>' + head + '</h3><p class="cal-empty">' + (rawList.length ? 'この日の配信は、現在のフィルタでは非表示です。' : 'この日の配信はありません。') + '</p>';
       return;
     }
     var html = '<h3>' + head + '<span class="cnt">' + list.length + '件</span></h3><div class="ev-list">';
@@ -1243,8 +1319,95 @@
     renderCal();
   });
 
+  /* ---------- v1追加：在庫メーター／フィルタ／今週の配信 ---------- */
+  /* ショートの最終枠日（在庫が尽きる日） */
+  var SHORTS_LAST = EVENTS.filter(function(e){ return e.s === 'shorts'; }).map(function(e){ return e.d; }).sort().pop();
+
+  /* 在庫メーター：ショートはEVENTSから動的計算、長尺はSTOCK定数 */
+  var stockRow = document.getElementById('stockRow');
+  if(stockRow){
+    var sLeft = EVENTS.filter(function(e){ return e.s === 'shorts' && e.st !== '公開済み' && e.st !== '配信済み'; }).length;
+    stockRow.innerHTML =
+      '<div class="stock-box"><div class="k">ショート在庫</div>'
+      + '<div class="v">あと' + sLeft + '本<span class="unit"> ／ 約' + Math.round(sLeft / 2) + '日分</span></div>'
+      + '<div class="d">1日2本ペース換算 ・ 最終枠 ' + SHORTS_LAST + '</div></div>'
+      + '<div class="stock-box"><div class="k">長尺在庫</div>'
+      + '<div class="v">あと' + STOCK.honpenLeft + '本<span class="unit"> ／ 1日1本ペースなら' + STOCK.honpenLeft + '日分</span></div>'
+      + '<div class="d">' + esc(STOCK.honpenNote) + '</div></div>';
+  }
+
+  /* シリーズ別フィルタ（Substackだけ＝切腹＋山田） */
+  var filterKey = 'all';
+  function passFilter(e){
+    if(filterKey === 'honpen') return e.s === 'honpen';
+    if(filterKey === 'shorts') return e.s === 'shorts';
+    if(filterKey === 'substack') return e.s === 'seppuku' || e.s === 'yamada';
+    return true;
+  }
+
+  /* 今週の配信：今日から7日間を日時順リストで表示 */
+  var monthView = document.getElementById('calMonthView');
+  var weekView = document.getElementById('calWeekView');
+  var weekHead = document.getElementById('weekHead');
+  var weekList = document.getElementById('weekList');
+  function addDays(ds, n){
+    var p = ds.split('-');
+    var dt = new Date(+p[0], +p[1] - 1, +p[2] + n);
+    return keyOf(dt.getFullYear(), dt.getMonth(), dt.getDate());
+  }
+  function renderWeek(){
+    if(!weekList) return;
+    var end = addDays(TODAY, 6);
+    var items = EVENTS.filter(function(e){ return e.d >= TODAY && e.d <= end; }).filter(passFilter).slice().sort(function(a, b){
+      if(a.d !== b.d) return a.d < b.d ? -1 : 1;
+      return sortKey(a) < sortKey(b) ? -1 : (sortKey(a) > sortKey(b) ? 1 : 0);
+    });
+    var tp = TODAY.split('-'), ep = end.split('-');
+    weekHead.textContent = '今日 ' + md(TODAY) + '（' + DOW[new Date(+tp[0], +tp[1] - 1, +tp[2]).getDay()] + '）から7日間（' + md(end) + '（' + DOW[new Date(+ep[0], +ep[1] - 1, +ep[2]).getDay()] + '）まで）・ ' + items.length + '件';
+    if(!items.length){
+      weekList.innerHTML = '<p class="cal-empty">この7日間に表示できる配信はありません。</p>';
+      return;
+    }
+    weekList.innerHTML = items.map(function(e){
+      var p = e.d.split('-');
+      var dt = new Date(+p[0], +p[1] - 1, +p[2]);
+      var sr = SERIES[e.s] || {name:e.s, color:'#888888'};
+      return '<div class="ev-item">'
+        + '<div class="ev-date">' + (+p[1]) + '/' + (+p[2]) + '（' + DOW[dt.getDay()] + '）<span class="ev-dtime">' + esc(e.t || '—') + '</span></div>'
+        + '<div class="ev-body">'
+        + '<div class="ev-top"><span class="series-badge" style="--sc:' + sr.color + '">' + esc(sr.name) + '</span>'
+        + '<span class="st-chip ' + stClass(e.st) + '">' + esc(e.st) + '</span></div>'
+        + '<div class="ev-title">' + esc(e.no) + ' ' + esc(e.title) + '</div>'
+        + '<div class="ev-meta">' + esc(e.media) + '</div>'
+        + (e.note ? '<div class="ev-note">' + esc(e.note) + '</div>' : '')
+        + '</div></div>';
+    }).join('');
+  }
+
+  var filterBtns = Array.prototype.slice.call(document.querySelectorAll('#calFilters .seg-btn'));
+  filterBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      filterKey = b.getAttribute('data-f');
+      filterBtns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      renderCal();
+      renderDetail();
+      renderWeek();
+    });
+  });
+  var viewBtns = Array.prototype.slice.call(document.querySelectorAll('#calViews .seg-btn'));
+  viewBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      var v = b.getAttribute('data-v');
+      viewBtns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      monthView.hidden = v !== 'month';
+      weekView.hidden = v !== 'week';
+      if(v === 'week') renderWeek();
+    });
+  });
+
   renderCal();
   renderDetail();
+  renderWeek();
 })();
 </script>
 </body>
