@@ -12,6 +12,21 @@
     <itunes:category text="History"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
+        <item>
+                <title>The Russo-Japanese War Explained: How Japan Beat a Great Power and Won No Reparations at All</title>
+                <description>Japan fought one of the largest empires on Earth, and won. Then, at the peace table, Japan received no money at all. What came home instead was a mountain of debt, tens of thousands of dead, and a crowd so angry that it burned its own capital.
+                          Let me give you the answer first. Japan won the battles, on land and at sea. But this victory paid nothing. Russia handed over no reparations, and Japan was left with the loans, the taxes, and the graves. The people who had paid for the war felt cheated, and their anger exploded in the streets of Tokyo.
+                  
+                          Read more on the blog: https://egui-jp.com/russo-japanese-war/
+                          Watch the video: https://youtu.be/1vQ1QZCsHo8
+                          Deeper stories on Substack: https://eguijapan.substack.com</description>
+                <enclosure url="https://donsan88.github.io/japanese-history-podcast/audio/ep17.mp3" length="7094901" type="audio/mpeg"/>
+                <guid isPermaLink="false">japanese-history-ep17</guid>
+                <pubDate>Fri, 20 Nov 2026 12:00:00 +0900</pubDate>
+                <itunes:duration>00:07:23</itunes:duration>
+                <itunes:episode>17</itunes:episode>
+                <itunes:explicit>false</itunes:explicit>
+      </item>
     <item>
                 <title>The Meiji Period Explained: How Japan Abolished the Samurai in 10 Years</title>
                       <description>For almost three centuries, the samurai were Japan's ruling class, paid to fight and marked by the two swords at their waist. In a single decade, the new Meiji government took all of it away.
