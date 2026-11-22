@@ -437,6 +437,60 @@
     .cal-detail{padding:14px}
     .ev-time{flex-basis:42px;font-size:13.5px}
   }
+  /* ---------- Contents (既存コンテンツ) ---------- */
+  .contents-main{max-width:1020px;margin:0 auto;padding:8px 16px 12px}
+  .c-summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 6px}
+  @media (min-width:640px){.c-summary{grid-template-columns:repeat(3,1fr)}}
+  @media (min-width:960px){.c-summary{grid-template-columns:repeat(6,1fr)}}
+  .c-sum-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:12px 14px}
+  .c-sum-box .k{font-size:12.5px;font-weight:700;color:var(--text-2);display:flex;align-items:center;gap:6px;line-height:1.4}
+  .c-sum-box .k::before{content:"";width:9px;height:9px;border-radius:999px;background:var(--cc,#888);flex:0 0 9px}
+  .c-sum-box .v{font-size:22px;font-weight:800;margin-top:4px;line-height:1.25}
+  .c-sum-box .v .unit{font-size:13px;font-weight:700;color:var(--text-2)}
+  .c-sum-box .d{font-size:12px;color:var(--text-2);margin-top:2px;line-height:1.5}
+  .c-sum-box.total{background:var(--red-tint);border-color:var(--red-tint-2)}
+  .c-sum-box.total .k::before{background:var(--red)}
+  .c-toolbar{position:sticky;top:0;z-index:15;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:12px 0 10px;margin:0 0 4px}
+  .c-search-wrap{position:relative}
+  .c-search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--text-3);pointer-events:none}
+  #contentsSearch{width:100%;height:50px;padding:0 48px 0 44px;font-size:16px;font-family:inherit;color:var(--text);background:var(--card);border:1.5px solid var(--line-strong);border-radius:12px;outline:none}
+  #contentsSearch:focus{border-color:var(--red);box-shadow:0 0 0 3px var(--red-tint-2)}
+  #contentsSearch::placeholder{color:var(--text-3)}
+  #contentsClear{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:40px;height:40px;min-height:40px;border:none;border-radius:999px;background:var(--red-tint);color:var(--red);font-size:18px;line-height:1;cursor:pointer;display:none;align-items:center;justify-content:center}
+  #contentsClear.show{display:flex}
+  .c-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .c-chip{min-height:38px;padding:6px 13px;border-radius:999px;cursor:pointer;border:1px solid var(--line-strong);background:var(--card);font-family:inherit;font-size:13.5px;font-weight:700;color:var(--text);display:inline-flex;align-items:center;gap:6px}
+  .c-chip::before{content:"";width:8px;height:8px;border-radius:999px;background:var(--cc,transparent);flex:0 0 8px}
+  .c-chip[data-cat="all"]::before{display:none}
+  .c-chip[aria-pressed="true"]{background:var(--text);border-color:var(--text);color:var(--bg)}
+  .c-chip .cn{font-size:12px;opacity:.75;font-weight:800}
+  .c-result{font-size:13px;color:var(--text-2);min-height:20px;margin-top:8px}
+  .c-result strong{color:var(--red)}
+  .c-group{margin:18px 0 0}
+  .c-group-head{display:flex;align-items:center;gap:9px;margin:0 0 10px;flex-wrap:wrap}
+  .c-group-head h3{margin:0;font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+  .c-group-head h3::before{content:"";width:11px;height:11px;border-radius:999px;background:var(--cc);flex:0 0 11px}
+  .c-group-head .gcount{font-size:12.5px;font-weight:700;color:var(--red);background:var(--red-tint);border:1px solid var(--red-tint-2);padding:2px 9px;border-radius:999px;white-space:nowrap}
+  .c-group-head .gnote{font-size:12.5px;color:var(--text-2)}
+  .c-rows{display:flex;flex-direction:column;gap:8px}
+  .c-row{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:12px 14px}
+  .c-row-top{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}
+  .c-title{font-size:15.5px;font-weight:700;line-height:1.5;overflow-wrap:anywhere;flex:1;min-width:0}
+  .c-lang{flex:0 0 auto;font-size:11.5px;font-weight:800;padding:3px 9px;border-radius:999px;border:1px solid color-mix(in srgb,var(--cc) 50%,transparent);background:color-mix(in srgb,var(--cc) 12%,var(--card));white-space:nowrap;margin-top:1px}
+  .c-status{font-size:13.5px;color:var(--text-2);line-height:1.65;margin-top:5px;overflow-wrap:anywhere}
+  .c-next{font-size:13px;line-height:1.6;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);display:flex;gap:8px;flex-wrap:wrap;align-items:baseline}
+  .c-next-label{font-size:11.5px;font-weight:800;color:var(--text-3);white-space:nowrap}
+  .c-next-val{font-weight:700;overflow-wrap:anywhere}
+  .c-empty{display:none;text-align:center;padding:36px 16px 10px;color:var(--text-2)}
+  .c-empty.show{display:block}
+  .c-empty p{margin:6px 0;font-size:15px}
+  .c-empty button{margin-top:10px;padding:10px 20px;min-height:44px;border:1px solid var(--red);border-radius:999px;background:var(--card);color:var(--red);font-weight:700;font-size:14px;cursor:pointer;font-family:inherit}
+  .c-foot-note{font-size:12.5px;color:var(--text-3);line-height:1.75;margin:22px 2px 0}
+  @media (max-width:560px){
+    .c-summary{grid-template-columns:1fr 1fr}
+    .c-row{padding:12px}
+    .c-title{font-size:15px}
+  }
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto}
     .link-card{transition:none}
@@ -469,6 +523,7 @@
     <button class="tab-btn" type="button" role="tab" id="tabLinks" aria-selected="true" aria-controls="panel-links">リンク<span class="tab-sub">全20リンク・検索つき</span></button>
     <button class="tab-btn" type="button" role="tab" id="tabMeasure" aria-selected="false" aria-controls="panel-measure">効果測定<span class="tab-sub">毎日軽測定・直近1か月</span></button>
     <button class="tab-btn" type="button" role="tab" id="tabCalendar" aria-selected="false" aria-controls="panel-calendar">配信カレンダー<span class="tab-sub" id="tabCalSub">11/15〜1/17・全80件</span></button>
+    <button class="tab-btn" type="button" role="tab" id="tabContents" aria-selected="false" aria-controls="panel-contents">既存コンテンツ<span class="tab-sub">全56件・5区分</span></button>
   </div>
 </div>
 
@@ -887,6 +942,42 @@
 </div>
 </div><!-- /panel-calendar -->
 
+<div id="panel-contents" role="tabpanel" aria-labelledby="tabContents" hidden>
+<div class="contents-main">
+
+  <section style="padding-top:18px">
+    <div class="sec-head"><h2>既存コンテンツ</h2><span class="count" id="contentsTotalCount">全56件</span></div>
+    <p class="sec-desc">これまでに作った原稿・記事・本の在庫一覧です。区分ごとに「あと何をすれば表に出せるか」と「次の行き先（担当部屋）」が分かります。</p>
+    <h3 style="margin:14px 0 10px;font-size:15px;font-weight:800">在庫サマリー</h3>
+    <div class="c-summary" id="contentsSummary" aria-label="在庫サマリー"></div>
+  </section>
+
+  <div class="c-toolbar">
+    <div class="c-search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+      <input id="contentsSearch" type="search" inputmode="search" autocomplete="off" placeholder="タイトル・状態・行き先で検索（例：花魁、英訳、KDP）" aria-label="既存コンテンツを検索" />
+      <button id="contentsClear" type="button" aria-label="検索をクリア">×</button>
+    </div>
+    <div class="c-chips" id="contentsChips" role="group" aria-label="区分で絞り込む"></div>
+    <div class="c-result" id="contentsResult" aria-live="polite"></div>
+  </div>
+
+  <div id="contentsList"></div>
+
+  <div class="c-empty" id="contentsEmpty">
+    <p><strong>該当するコンテンツがありません</strong></p>
+    <p>別の言葉で試すか、区分フィルタを「すべて」に戻してみてください。</p>
+    <button type="button" id="contentsReset">検索とフィルタをクリア</button>
+  </div>
+
+  <section>
+    <p class="c-foot-note">このタブは表示専用です。進み具合の正本は各担当部屋の台帳で、ハブは担当部屋からの橋渡しで更新します。データの元：原稿棚卸し・記事棚卸し（2026-11-23確認）。</p>
+    <p class="foot-line">ENN メディアハブ ― 既存コンテンツ（全56件・5区分）</p>
+  </section>
+
+</div>
+</div><!-- /panel-contents -->
+
 <script>
 (function(){
   var input = document.getElementById('search');
@@ -955,21 +1046,26 @@
   var tabLinks = document.getElementById('tabLinks');
   var tabMeasure = document.getElementById('tabMeasure');
   var tabCalendar = document.getElementById('tabCalendar');
+  var tabContents = document.getElementById('tabContents');
   var panelLinks = document.getElementById('panel-links');
   var panelMeasure = document.getElementById('panel-measure');
   var panelCalendar = document.getElementById('panel-calendar');
+  var panelContents = document.getElementById('panel-contents');
   function show(mode){
     tabLinks.setAttribute('aria-selected', mode === 'links' ? 'true' : 'false');
     tabMeasure.setAttribute('aria-selected', mode === 'measure' ? 'true' : 'false');
     tabCalendar.setAttribute('aria-selected', mode === 'calendar' ? 'true' : 'false');
+    if(tabContents) tabContents.setAttribute('aria-selected', mode === 'contents' ? 'true' : 'false');
     panelLinks.hidden = mode !== 'links';
     panelMeasure.hidden = mode !== 'measure';
     panelCalendar.hidden = mode !== 'calendar';
+    if(panelContents) panelContents.hidden = mode !== 'contents';
     window.scrollTo({top:0, behavior:'smooth'});
   }
   tabLinks.addEventListener('click', function(){ show('links'); });
   tabMeasure.addEventListener('click', function(){ show('measure'); });
   tabCalendar.addEventListener('click', function(){ show('calendar'); });
+  if(tabContents) tabContents.addEventListener('click', function(){ show('contents'); });
 
   /* 実測点のみ。ENN・TikTokの日次点は2026-11-17の毎日軽測定から追加される */
   var DATASETS = {
@@ -1424,6 +1520,179 @@
   renderCal();
   renderDetail();
   renderWeek();
+})();
+</script>
+<script>
+/* ---------- Existing contents (既存コンテンツ) ---------- */
+(function(){
+  /* 区分定義：区分の追加はここに1行足すだけ。note は本数などの注記（任意） */
+  var CATS = {
+    shorts:   {name:'ショート在庫', color:'#2563eb', note:'55本'},
+    honpen:   {name:'本編候補', color:'#991b1b', note:'見込み約15本'},
+    kdp:      {name:'KDP・販売候補', color:'#b45309'},
+    articles: {name:'ブログ・Substack記事', color:'#15803d'},
+    later:    {name:'後回し', color:'#78716c'}
+  };
+  /* コンテンツ：{c:区分キー, t:タイトル, s:状態, l:言語, n:次の行き先} */
+  var CONTENTS = [
+    {c:'shorts', t:'禅語 No.1〜40（40本）', s:'完成パッケージ（英語台本＋日本語訳＋タイトル・説明文・タグ）。絵と組み立てだけで在庫になる', l:'日英', n:'禅語40本 在庫化'},
+    {c:'shorts', t:'葉隠ショート 全15本', s:'日本語の原稿は完成。英訳だけ要る', l:'日', n:'葉隠ショート 英訳・在庫化'},
+    {c:'honpen', t:'神仏習合', s:'台本ドラフト完了（1,499語・形式チェック合格）。1本化、最優先', l:'日英', n:'既存原稿 本編化 準備'},
+    {c:'honpen', t:'崇徳天皇', s:'既存の完成台本（2026-11-02）を採用。NG表現の差し替えのみ', l:'日英', n:'既存原稿 本編化 準備'},
+    {c:'honpen', t:'菅原道真', s:'完成・最長クラス。2本に圧縮分割（主）', l:'日英', n:'既存原稿 本編化 準備'},
+    {c:'honpen', t:'御霊信仰', s:'完成。1本（従・概念回、道真の後ろ）', l:'日英', n:'既存原稿 本編化 準備'},
+    {c:'honpen', t:'祟りの意味（Tatari）', s:'完成。2本に分割', l:'日英', n:'既存原稿 本編化 準備'},
+    {c:'honpen', t:'雪女', s:'完成寄り。1本に圧縮', l:'日英', n:'既存原稿 本編化 準備'},
+    {c:'honpen', t:'天狗', s:'完成。2本（冒頭コラム除去＋圧縮）', l:'日英', n:'既存原稿 本編化 準備'},
+    {c:'honpen', t:'三種の神器 台本01', s:'台本形式で完成寄り。5〜6本のミニシリーズ化、英訳が丸ごと要る', l:'日', n:'既存原稿 本編化 準備'},
+    {c:'kdp', t:'独行道Vol.1', s:'日本語原稿は完成した本。KDP仕上げ中（プレースホルダ置換・組版・カバー確認）', l:'日', n:'独行道Vol.1 販売準備'},
+    {c:'kdp', t:'神道 6系シリーズ束ね本（全7章）', s:'ENは全章分が既存。残作業は編集のみ（JP分離・プロンプト節除去・目次新設）', l:'日英', n:'既存原稿 KDP販売 神道・呪詛'},
+    {c:'kdp', t:'神社とは何か（旧原稿 第1〜7章）', s:'JPのみ。第2弾として全訳（The Architecture of the Gods）', l:'日', n:'既存原稿 KDP販売 神道・呪詛'},
+    {c:'kdp', t:'The Quiet Side of Japan', s:'JP/ENで章構成が相違。KDPではなく無料PDF入口として整備', l:'日英', n:'既存原稿 KDP販売 神道・呪詛'},
+    {c:'kdp', t:"切腹 Seppuku: The Samurai's Honourable Death", s:'販売中（ASIN B0HS544LN7・$3.99）', l:'英', n:'制作側（KDP）'},
+    {c:'kdp', t:'山田 The Man Behind Harakiri', s:'販売中（ASIN B0HS67T1XQ・¥600）', l:'英', n:'制作側（KDP）'},
+    {c:'kdp', t:'刀 The Sword That Ruled Japan', s:'EPUB完成（約29,900語）。カバー選定とKDPアップロード待ち', l:'英', n:'制作側（KDP）'},
+    {c:'kdp', t:'The Box Japan Never Opened for Nearly 2,000 Years', s:'販売中（ASIN B0HL4V1ZJW）', l:'英', n:'制作側（KDP）'},
+    {c:'kdp', t:'The Curse Japan Never Denied', s:'販売中（ASIN B0HL9R6LYB・$4.99）', l:'英', n:'制作側（KDP）'},
+    {c:'kdp', t:'花魁 Gumroad教材（23講義）', s:'完成教材。販売教材として別管理', l:'日', n:'販売教材として別管理'},
+    {c:'kdp', t:'花魁 Udemy教材', s:'完成教材。販売教材として別管理', l:'日', n:'販売教材として別管理'},
+    {c:'articles', t:'龍タトゥーの意味（japanese dragon tattoo meaning）', s:'完成。最終メタ確認のみ（2分割公開も可）', l:'日英', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'花魁×15軸「誤解の解体」最新版', s:'完成。チェックメモとの突合のみ（正本はこれに一本化）', l:'日英', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'sento（銭湯）', s:'完成。記事単位の切り分け確認', l:'日英', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'千と千尋の湯屋（Spirited Away Bathhouse）', s:'完成。親記事との本文重複チェック', l:'日英', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'狛犬（0813_Komainu）', s:'完成寄り。Sources欄の追加のみ', l:'日英', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'妖怪ピラー記事', s:'完成。内部リンク整備（分割して子記事化も可）', l:'日英', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'ヤクザ ピラー記事', s:'完成。冒頭コラムの鮮度確認', l:'日英', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'軸16 ジュディ・ガーランド', s:'完成。そのまま入稿可', l:'日英', n:'ブログ／Substack（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'花魁×12軸（階級制度）', s:'完成。メモに沿った最終確認のみ', l:'日英', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'konyoku onsen（混浴温泉）', s:'完成寄り。末尾メモ2件の処理', l:'日英', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'yakuza tattoo記事', s:'完成寄り。冒頭の時事コラム差し替え必須', l:'日英', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'ヤクザはなぜ指を詰めるのか', s:'完成寄り。メモ処理のみ（公開後に親記事と相互リンク）', l:'日英', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'カイゼンという言葉の意味', s:'完成寄り。英語部の完成範囲の確認が先', l:'日英', n:'Substack→ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'皇統（英語版）', s:'英語本文は完成形。Sources欄追加と重複ファイル整理', l:'英', n:'Substack（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'皇統（日本語版）', s:'日本語本文。英語版とセット化、Sources欄追加', l:'日', n:'Substack（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'花魁メルマガ原稿', s:'完成形。そのまま配信可', l:'日英', n:'Substack（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'花魁×15軸 英語全文版', s:'「誤解の解体」最新版と同一テーマの別版。正本をどちらにするか決めるだけ', l:'英', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'軸16 ロダン', s:'日本語完成。全英訳待ち', l:'日', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'花魁×軸17（アニメの花魁キャラ ランキング）', s:'日本語完成。全英訳待ち', l:'日', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'花魁×15軸 日本語版', s:'素材（英訳は別版で済み）。チェックメモ部分の分離', l:'日', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'口裂け女', s:'日本語完成。全英訳待ち', l:'日', n:'ブログ＋Substack（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'日本の龍VS中国の龍', s:'日本語完成。ブログ用は全英訳', l:'日', n:'Substack（日）／ブログ（英訳後）（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'絡新婦（jorogumo）', s:'日本語完成。全英訳＋Sources欄追加', l:'日', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'onsen with tattoos', s:'日本語完成。全英訳待ち（英語メタは用意済み）', l:'日', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'平将門・将門塚（0814_平清盛）', s:'版の整理＋全英訳（タイトルと中身の不一致の解消が先）', l:'日英混', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'春画の歴史と文化的意義', s:'日本語完成寄り。販売文の分離・整形＋全英訳', l:'日', n:'ブログ＋Substack（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'花魁サンプル', s:'位置づけ確認（試作か、本記事化するか）', l:'日', n:'ブログ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'About Egui Japan 日本語一次原稿', s:'Aboutページ用の一次原稿。英訳して差し替え判断', l:'日', n:'ブログ・Aboutページ（既存記事 ブログ・Substack配信）'},
+    {c:'articles', t:'皇位継承 script-02（動画台本 全3部）', s:'台本として完成寄り。記事化するなら英訳＋記事整形', l:'日', n:'Substack・記事化（既存記事 ブログ・Substack配信）'},
+    {c:'later', t:'草薙剣 article-01', s:'断片のみ。本筋は三種の神器 台本01側', l:'日', n:'後回し'},
+    {c:'later', t:'葉隠の長編版', s:'ショート側を先に使う', l:'日', n:'後回し'},
+    {c:'later', t:'絶望系 42件（お金の歴史シリーズ等）', s:'今のチャンネルとは題材が違う。別企画の出口向き', l:'日', n:'後回し'},
+    {c:'later', t:'学生向け 2件（少子高齢化）', s:'別企画の出口向き', l:'日', n:'後回し'},
+    {c:'later', t:'昭和レトロ 純喫茶 4件', s:'単独の読み物・有料版の形あり', l:'日英', n:'後回し'},
+    {c:'later', t:'古代神道と「神ながらの道」', s:'動画の文字起こし整理。本の原稿ではない', l:'日', n:'後回し'}
+  ];
+
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function norm(s){ return (s || '').toLowerCase().replace(/\s+/g,' ').trim(); }
+
+  var summaryEl = document.getElementById('contentsSummary');
+  var chipsEl = document.getElementById('contentsChips');
+  var listEl = document.getElementById('contentsList');
+  var searchEl = document.getElementById('contentsSearch');
+  var clearEl = document.getElementById('contentsClear');
+  var resultEl = document.getElementById('contentsResult');
+  var emptyEl = document.getElementById('contentsEmpty');
+  var totalEl = document.getElementById('contentsTotalCount');
+  if(!summaryEl || !listEl || !searchEl) return;
+
+  var catKeys = Object.keys(CATS);
+  var counts = {};
+  catKeys.forEach(function(k){ counts[k] = 0; });
+  CONTENTS.forEach(function(it){ if(counts[it.c] != null) counts[it.c]++; });
+  var total = CONTENTS.length;
+  if(totalEl) totalEl.textContent = '全' + total + '件';
+
+  /* 在庫サマリー：CONTENTSから動的に集計 */
+  summaryEl.innerHTML = catKeys.map(function(k){
+    var cat = CATS[k];
+    var note = cat.note ? '<div class="d">' + esc(cat.note) + '</div>' : '<div class="d">&nbsp;</div>';
+    return '<div class="c-sum-box" style="--cc:' + esc(cat.color) + '"><div class="k">' + esc(cat.name) + '</div>'
+      + '<div class="v">' + counts[k] + '<span class="unit"> 件</span></div>' + note + '</div>';
+  }).join('') + '<div class="c-sum-box total"><div class="k">合計</div><div class="v">' + total + '<span class="unit"> 件</span></div><div class="d">' + catKeys.length + '区分</div></div>';
+
+  /* 区分フィルタチップ */
+  var activeCat = 'all';
+  function renderChips(){
+    var html = '<button type="button" class="c-chip" data-cat="all" aria-pressed="' + (activeCat === 'all' ? 'true' : 'false') + '">すべて<span class="cn">' + total + '</span></button>';
+    catKeys.forEach(function(k){
+      var cat = CATS[k];
+      html += '<button type="button" class="c-chip" data-cat="' + esc(k) + '" style="--cc:' + esc(cat.color) + '" aria-pressed="' + (activeCat === k ? 'true' : 'false') + '">' + esc(cat.name) + '<span class="cn">' + counts[k] + '</span></button>';
+    });
+    chipsEl.innerHTML = html;
+  }
+  chipsEl.addEventListener('click', function(ev){
+    var btn = ev.target && ev.target.closest ? ev.target.closest('[data-cat]') : null;
+    if(!btn) return;
+    activeCat = btn.getAttribute('data-cat');
+    renderChips();
+    renderList();
+  });
+
+  function matches(it, terms){
+    if(!terms.length) return true;
+    var hay = norm(it.t + ' ' + it.s + ' ' + it.n + ' ' + it.l + ' ' + (CATS[it.c] ? CATS[it.c].name : ''));
+    return terms.every(function(t){ return hay.indexOf(t) !== -1; });
+  }
+
+  function renderList(){
+    var q = norm(searchEl.value);
+    clearEl.classList.toggle('show', q.length > 0);
+    var terms = q ? q.split(' ').filter(Boolean) : [];
+    var visibleTotal = 0;
+    var html = '';
+    catKeys.forEach(function(k){
+      if(activeCat !== 'all' && activeCat !== k) return;
+      var cat = CATS[k];
+      var items = CONTENTS.filter(function(it){ return it.c === k && matches(it, terms); });
+      if(!items.length) return;
+      visibleTotal += items.length;
+      html += '<div class="c-group"><div class="c-group-head" style="--cc:' + esc(cat.color) + '"><h3>' + esc(cat.name) + '</h3>'
+        + '<span class="gcount">' + items.length + '件</span>'
+        + (cat.note ? '<span class="gnote">' + esc(cat.note) + '</span>' : '')
+        + '</div><div class="c-rows">';
+      items.forEach(function(it){
+        html += '<div class="c-row" style="--cc:' + esc(cat.color) + '">'
+          + '<div class="c-row-top"><span class="c-title">' + esc(it.t) + '</span><span class="c-lang">' + esc(it.l) + '</span></div>'
+          + '<div class="c-status">' + esc(it.s) + '</div>'
+          + '<div class="c-next"><span class="c-next-label">次の行き先</span><span class="c-next-val">' + esc(it.n) + '</span></div>'
+          + '</div>';
+      });
+      html += '</div></div>';
+    });
+    listEl.innerHTML = html;
+    emptyEl.classList.toggle('show', visibleTotal === 0);
+    if(!q && activeCat === 'all'){
+      resultEl.textContent = '';
+    } else if(visibleTotal === 0){
+      resultEl.innerHTML = '一致するコンテンツはありません';
+    } else {
+      resultEl.innerHTML = '<strong>' + visibleTotal + '件</strong> / 全' + total + '件を表示中';
+    }
+  }
+
+  searchEl.addEventListener('input', renderList);
+  clearEl.addEventListener('click', function(){ searchEl.value = ''; renderList(); searchEl.focus(); });
+  document.getElementById('contentsReset').addEventListener('click', function(){
+    searchEl.value = '';
+    activeCat = 'all';
+    renderChips();
+    renderList();
+    searchEl.focus();
+  });
+
+  renderChips();
+  renderList();
 })();
 </script>
 </body>
