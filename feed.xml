@@ -5,7 +5,7 @@
     <link>https://egui-jp.com/</link>
     <atom:link href="https://donsan88.github.io/japanese-history-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Nov 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 12:00:00 +0900</lastBuildDate>
     <description>ENN | Egui News Network reports from Japan on the side of Japanese history and culture that schools never teach: the plots, the scandals, the executions and the quiet deals behind the beautiful image of Japan. If you love Japan, this is the Japan behind the postcard, told straight in plain English. Read the full stories on Substack, and get the collected editions as books on Amazon.</description>
     <itunes:author>ENN | Egui News Network</itunes:author>
     <itunes:owner><itunes:name>Egui Japan</itunes:name><itunes:email>donsan88@gmail.com</itunes:email></itunes:owner>
@@ -13,6 +13,20 @@
     <itunes:category text="History"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
+<item>
+      <title>The Occupation of Japan Explained: 7 Years That Rebuilt a Defeated Country as a Democracy</title>
+      <description>In August 1945, Japan accepted defeat, and for the first time in its history, foreign troops occupied the whole country. Within weeks, one American general in Tokyo was giving orders that reached every town and village. Under those orders, the army was abolished, great business families were broken up, and women voted for the first time. A new constitution, drafted in about a week by the occupiers, declared that the people were sovereign. The emperor kept his throne, but lost his power. Seven years later, Japan was independent again, now as an ally of the country that had defeated it.
+              Japan lost its sovereignty in defeat, and the occupation forces pushed through reforms that turned it into a democracy. Then the Cold War began, Washington changed its plan, and Japan regained independence as an American ally. The same occupation that took freedom away also handed Japan the tools of freedom.
+              Read more on the blog: https://egui-jp.com/occupation-of-japan/
+              Watch the video: https://youtu.be/lWSueHg4Xv8
+              Deeper stories on Substack: https://eguijapan.substack.com</description>
+    <enclosure url="https://donsan88.github.io/japanese-history-podcast/audio/ep23.mp3" length="8630901" type="audio/mpeg"/>
+      <guid isPermaLink="false">japanese-history-ep23</guid>
+      <pubDate>Thu, 26 Nov 2026 12:00:00 +0900</pubDate>
+      <itunes:duration>00:08:59</itunes:duration>
+      <itunes:episode>23</itunes:episode>
+      <itunes:explicit>false</itunes:explicit>
+</item>
 <item>
       <title>World War II: The War Decided by Resources, Not Courage (1939-1945)</title>
       <description>On the morning of December 7, 1941, Japanese planes wrecked the American battle fleet at Pearl Harbor in about two hours. It was one of the most brilliant surprise attacks in history. Six months later, at Midway, Japan lost four aircraft carriers in a few days. America lost one carrier there, and then built more than one hundred new carriers during the war. Japan could never replace its four. Brave men fought and died on both sides, in fleets, in jungles, and in burning cities. But the result was already hidden in shipyards, oil fields, and lists of allies. This war was won by the side that could build, fuel, and feed more than the other.
