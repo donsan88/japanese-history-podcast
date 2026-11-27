@@ -5,7 +5,7 @@
     <link>https://egui-jp.com/</link>
     <atom:link href="https://donsan88.github.io/japanese-history-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Thu, 26 Nov 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 12:00:00 +0900</lastBuildDate>
     <description>ENN | Egui News Network reports from Japan on the side of Japanese history and culture that schools never teach: the plots, the scandals, the executions and the quiet deals behind the beautiful image of Japan. If you love Japan, this is the Japan behind the postcard, told straight in plain English. Read the full stories on Substack, and get the collected editions as books on Amazon.</description>
     <itunes:author>ENN | Egui News Network</itunes:author>
     <itunes:owner><itunes:name>Egui Japan</itunes:name><itunes:email>donsan88@gmail.com</itunes:email></itunes:owner>
@@ -13,6 +13,20 @@
     <itunes:category text="History"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
+<item>
+      <title>The Japan Economic Miracle Explained: From Burned Cities to Number Two in the World in 23 Years</title>
+      <description>In 1945, Japan lay in ruins, its cities burned, its people hungry, its factories silent. Twenty three years later, that same country held the second largest economy on earth. Only the United States stood ahead of it. No country had ever climbed so far, so fast, from total defeat. In the fishing town of Minamata, cats had begun to stagger and fall into the sea. Babies there were born with bodies that would not obey them, poisoned before birth. The miracle and the poison rose from the same factories, in the same years.
+              In one generation, workers, companies, and the state pulled together and rebuilt Japan into an economic giant. Growth near ten percent a year remade incomes, cities, and daily life itself. But the bill came due in poisoned rivers, crowded cities, and lives consumed by work.
+              Read more on the blog: https://egui-jp.com/japan-economic-miracle/
+              Watch the video: https://youtu.be/-XVxhOLdL-o
+              Deeper stories on Substack: https://eguijapan.substack.com</description>
+    <enclosure url="https://donsan88.github.io/japanese-history-podcast/audio/ep24.mp3" length="8263933" type="audio/mpeg"/>
+      <guid isPermaLink="false">japanese-history-ep24</guid>
+      <pubDate>Fri, 27 Nov 2026 12:00:00 +0900</pubDate>
+      <itunes:duration>00:08:36</itunes:duration>
+      <itunes:episode>24</itunes:episode>
+      <itunes:explicit>false</itunes:explicit>
+</item>
 <item>
       <title>The Occupation of Japan Explained: 7 Years That Rebuilt a Defeated Country as a Democracy</title>
       <description>In August 1945, Japan accepted defeat, and for the first time in its history, foreign troops occupied the whole country. Within weeks, one American general in Tokyo was giving orders that reached every town and village. Under those orders, the army was abolished, great business families were broken up, and women voted for the first time. A new constitution, drafted in about a week by the occupiers, declared that the people were sovereign. The emperor kept his throne, but lost his power. Seven years later, Japan was independent again, now as an ally of the country that had defeated it.
@@ -113,21 +127,6 @@ Deeper stories on Substack: https://eguijapan.substack.com</description>
                 <itunes:explicit>false</itunes:explicit>
       </item>
     <item>
-                <title>The Meiji Period Explained: How Japan Abolished the Samurai in 10 Years</title>
-                      <description>For almost three centuries, the samurai were Japan's ruling class, paid to fight and marked by the two swords at their waist. In a single decade, the new Meiji government took all of it away.
-                                            Let me give you the answer first. The new leaders reformed Japan at great speed because they believed a weak Japan would be taken over by the West. To protect the country, they took away the privileges of the samurai and placed a heavy new tax on farmers. The men who lost their swords rebelled with swords, and the farmers who paid for the reforms rebelled against the tax that funded them.
-                        
-                                          Read more on the blog: https://egui-jp.com/meiji-period/
-                                          Watch the video: https://www.youtube.com/watch?v=l0dDhAlMF5Y
-                                          Deeper stories on Substack: https://eguijapan.substack.com</description>
-                <enclosure url="https://donsan88.github.io/japanese-history-podcast/audio/ep15.mp3" length="7445151" type="audio/mpeg"/>
-                <guid isPermaLink="false">japanese-history-ep15</guid>
-                <pubDate>Thu, 19 Nov 2026 19:04:00 +0900</pubDate>
-                <itunes:duration>00:07:45</itunes:duration>
-                <itunes:episode>15</itunes:episode>
-                <itunes:explicit>false</itunes:explicit>
-    </item>
-    <item>
             <title>The First Sino-Japanese War Explained: How Japan Beat Asia's Largest Empire and Won a Fortune in Silver</title>
                   <description>Japan went to war with the largest empire in Asia, and won in less than a year. The prize was a mountain of silver, worth more than four times the government's yearly income. Japan spent that prize on warships, guns, and steel, and learned a dangerous lesson.
                                         Let me give you the answer first. Japan won, and the victory paid. China handed over land and a huge payment in silver, and Japan poured that money into its military and its heavy industry. Winning looked like a way to grow. That belief, planted by this war, would push Japan toward the next one.
@@ -142,6 +141,21 @@ Deeper stories on Substack: https://eguijapan.substack.com</description>
             <itunes:episode>16</itunes:episode>
             <itunes:explicit>false</itunes:explicit>
 </item>
+    <item>
+                <title>The Meiji Period Explained: How Japan Abolished the Samurai in 10 Years</title>
+                      <description>For almost three centuries, the samurai were Japan's ruling class, paid to fight and marked by the two swords at their waist. In a single decade, the new Meiji government took all of it away.
+                                            Let me give you the answer first. The new leaders reformed Japan at great speed because they believed a weak Japan would be taken over by the West. To protect the country, they took away the privileges of the samurai and placed a heavy new tax on farmers. The men who lost their swords rebelled with swords, and the farmers who paid for the reforms rebelled against the tax that funded them.
+                        
+                                          Read more on the blog: https://egui-jp.com/meiji-period/
+                                          Watch the video: https://www.youtube.com/watch?v=l0dDhAlMF5Y
+                                          Deeper stories on Substack: https://eguijapan.substack.com</description>
+                <enclosure url="https://donsan88.github.io/japanese-history-podcast/audio/ep15.mp3" length="7445151" type="audio/mpeg"/>
+                <guid isPermaLink="false">japanese-history-ep15</guid>
+                <pubDate>Thu, 19 Nov 2026 19:04:00 +0900</pubDate>
+                <itunes:duration>00:07:45</itunes:duration>
+                <itunes:episode>15</itunes:episode>
+                <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
           <title>The Bakumatsu Period Explained: How Four Black Ships Broke 260 Years of Tokugawa Rule</title>
                 <description>For more than two hundred and sixty years, Japan was closed to the outside world. Then four black ships sailed into Uraga Bay, and the peace the shogunate had built began to fall apart.
@@ -194,10 +208,10 @@ Deeper stories on Substack: https://eguijapan.substack.com</description>
                 Deeper stories on Substack: https://eguijapan.substack.com</description>
               <enclosure url="https://donsan88.github.io/japanese-history-podcast/audio/ep11.mp3" length="8603315" type="audio/mpeg"/>
               <guid isPermaLink="false">japanese-history-ep11</guid>
-              <pubDate>Sat, 14 Nov 2026 15:56:00 +0900</pubDate>
-              <itunes:duration>00:08:58</itunes:duration>
-              <itunes:episode>11</itunes:episode>
-              <itunes:explicit>false</itunes:explicit>
+                <pubDate>Sat, 14 Nov 2026 15:56:00 +0900</pubDate>
+                <itunes:duration>00:08:58</itunes:duration>
+                <itunes:episode>11</itunes:episode>
+                <itunes:explicit>false</itunes:explicit>
     </item>
 <item>
         <title>The Muromachi Period Explained: Two Ashikaga Houses and the Brakes That Failed</title>
@@ -206,7 +220,7 @@ Deeper stories on Substack: https://eguijapan.substack.com</description>
 
           Read more on the blog: https://egui-jp.com/muromachi-period/
           Deeper stories on Substack: https://eguijapan.substack.com</description>
-        <enclosure url="https://donsan88.github.io.japanese-history-podcast/audio/ep10.mp3" length="8022352" type="audio/mpeg"/>
+        <enclosure url="https://donsan88.github.io/japanese-history-podcast/audio/ep10.mp3" length="8022352" type="audio/mpeg"/>
         <guid isPermaLink="false">japanese-history-ep10</guid>
         <pubDate>Fri, 13 Nov 2026 20:52:00 +0900</pubDate>
         <itunes:duration>00:08:21</itunes:duration>
