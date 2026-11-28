@@ -5,7 +5,7 @@
     <link>https://egui-jp.com/</link>
     <atom:link href="https://donsan88.github.io/japanese-history-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Fri, 27 Nov 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 12:00:00 +0900</lastBuildDate>
     <description>ENN | Egui News Network reports from Japan on the side of Japanese history and culture that schools never teach: the plots, the scandals, the executions and the quiet deals behind the beautiful image of Japan. If you love Japan, this is the Japan behind the postcard, told straight in plain English. Read the full stories on Substack, and get the collected editions as books on Amazon.</description>
     <itunes:author>ENN | Egui News Network</itunes:author>
     <itunes:owner><itunes:name>Egui Japan</itunes:name><itunes:email>donsan88@gmail.com</itunes:email></itunes:owner>
@@ -14,6 +14,20 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
 <item>
+      <title>The Japan Bubble Economy Explained: 30 Years of Falling Prices and Lost Confidence</title>
+        <description>In December 1989, Japan stood at the top of the world. Its stock market closed the year at a record that would stand for thirty four years. People said the land under the Imperial Palace in Tokyo was worth more than all the land in California. Japanese companies were buying famous American landmarks and film studios. Many Americans feared that Japan would buy their country piece by piece. Many Japanese believed their rise would never stop. Both were wrong, and the fall had already begun.
+                        At its peak, Japan looked rich enough to buy the world. Land and stock prices rose until they lost all connection to real work and real profit. When the bubble burst, prices did not recover in a year or two. They fell, with the confidence of a whole country, for thirty years.
+                        Read more on the blog: https://egui-jp.com/japan-bubble-economy/
+                        Watch the video: https://youtu.be/gUhcJzfPDH4
+                        Deeper stories on Substack: https://eguijapan.substack.com</description>
+      <enclosure url="https://donsan88.github.io/japanese-history-podcast/audio/ep25.mp3" length="7951299" type="audio/mpeg"/>
+        <guid isPermaLink="false">japanese-history-ep25</guid>
+        <pubDate>Sat, 28 Nov 2026 12:00:00 +0900</pubDate>
+        <itunes:duration>00:08:17</itunes:duration>
+        <itunes:episode>25</itunes:episode>
+        <itunes:explicit>false</itunes:explicit>
+</item>
+  <item>
       <title>The Japan Economic Miracle Explained: From Burned Cities to Number Two in the World in 23 Years</title>
       <description>In 1945, Japan lay in ruins, its cities burned, its people hungry, its factories silent. Twenty three years later, that same country held the second largest economy on earth. Only the United States stood ahead of it. No country had ever climbed so far, so fast, from total defeat. In the fishing town of Minamata, cats had begun to stagger and fall into the sea. Babies there were born with bodies that would not obey them, poisoned before birth. The miracle and the poison rose from the same factories, in the same years.
               In one generation, workers, companies, and the state pulled together and rebuilt Japan into an economic giant. Growth near ten percent a year remade incomes, cities, and daily life itself. But the bill came due in poisoned rivers, crowded cities, and lives consumed by work.
